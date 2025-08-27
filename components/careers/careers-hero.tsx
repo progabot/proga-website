@@ -9,12 +9,12 @@ export default function CareersHero() {
         <Typography
           variant="h1"
           sx={{
-            fontSize: { xs: "2.5rem", md: "3.5rem" },
+            fontSize: { xs: "2.5rem", md: "4.375rem" },
             fontWeight: 700,
             lineHeight: 1.2,
             mb: 3,
             color: "#000",
-            maxWidth: "1120px"
+            maxWidth: "1120px",
           }}
         >
           Want to join a company that invests in you?
@@ -28,7 +28,7 @@ export default function CareersHero() {
             lineHeight: 1.6,
           }}
         >
-          Choosing where to build your career is a big decision. At ProgaTech, we offer a unique blend of professional
+          Choosing where to build your career is a big decision. At Proga Tech, we offer a unique blend of professional
           growth and personal support.
         </Typography>
       </Box>
@@ -38,7 +38,7 @@ export default function CareersHero() {
           position: "relative",
         }}
       >
-          <Image src="/team-photo-1.png" alt="ProgaTech team in modern office" width={1324} height={820} style={{ width: "100%", height: "auto" }} />
+          <Image src="/team-photo-1.png" alt="Proga Tech team in modern office" width={1324} height={820} style={{ width: "100%", height: "auto" }} />
       </Box>
     </Container>
   )

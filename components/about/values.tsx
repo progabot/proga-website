@@ -15,27 +15,27 @@ interface Value {
 export default function Values() {
   const values: Value[] = [
     {
-      icon: <SupportAgent sx={{ fontSize: 40, color: "#e91e63" }} />,
+      icon: <SupportAgent sx={{ fontSize: 40, color: "#E498B7" }} />,
       title: "Support",
       description: "We stand by our clients and team members",
     },
     {
-      icon: <TrendingUp sx={{ fontSize: 40, color: "#e91e63" }} />,
+      icon: <TrendingUp sx={{ fontSize: 40, color: "#E498B7" }} />,
       title: "Think big",
       description: "Every project has potential for greatness",
     },
     {
-      icon: <PersonPin sx={{ fontSize: 40, color: "#e91e63" }} />,
+      icon: <PersonPin sx={{ fontSize: 40, color: "#E498B7" }} />,
       title: "Customer first",
       description: "Your success is our priority",
     },
     {
-      icon: <Visibility sx={{ fontSize: 40, color: "#e91e63" }} />,
+      icon: <Visibility sx={{ fontSize: 40, color: "#E498B7" }} />,
       title: "Openness and transparency",
       description: "Clear communication, honest processes",
     },
     {
-      icon: <Psychology sx={{ fontSize: 40, color: "#e91e63" }} />,
+      icon: <Psychology sx={{ fontSize: 40, color: "#E498B7" }} />,
       title: "Curiosity and lifelong learning",
       description: "We never stop improving",
     },

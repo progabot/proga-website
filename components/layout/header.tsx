@@ -64,52 +64,50 @@ export default function Header() {
     >
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} px={0}>
         <Toolbar disableGutters sx={{ justifyContent: "space-between", py: 3, px: 0 }}>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-              <Image
-                src="/progatech-logo.png"
-                alt="ProgaTech"
-                width={140}
-                height={32}
-                style={{ objectFit: "contain" }}
-              />
-            </Link>
+          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            <Image
+              src="/proga-longlogo.png"
+              alt="ProgaTech"
+              width={220}
+              height={32}
+              style={{ objectFit: "contain" }}
+            />
+          </Link>
 
-            {(showDesktopMenu || !mounted) && (
-              <Box sx={{ display: "flex", gap: 4 }}>
-                {navigation.map((item) => (
-                  <Link key={item.name} href={item.href} style={{ textDecoration: "none" }}>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontWeight: 500,
-                        color: pathname === item.href ? "#000" : "#666",
-                        position: "relative",
-                        transition: "color 0.2s ease",
-                        "&:hover": {
-                          color: "#000",
-                        },
-                        "&::after":
-                          pathname === item.href
-                            ? {
-                                content: '""',
-                                position: "absolute",
-                                bottom: -4,
-                                left: 0,
-                                right: 0,
-                                height: 2,
-                                backgroundColor: "#f8bbd9",
-                              }
-                            : {},
-                      }}
-                    >
-                      {item.name}
-                    </Typography>
-                  </Link>
-                ))}
-              </Box>
-            )}
-          </Box>
+          {(showDesktopMenu || !mounted) && (
+            <Box sx={{ display: "flex", gap: 4 }}>
+              {navigation.map((item) => (
+                <Link key={item.name} href={item.href} style={{ textDecoration: "none" }}>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontWeight: 500,
+                      color: pathname === item.href ? "#000" : "#666",
+                      position: "relative",
+                      transition: "color 0.2s ease",
+                      "&:hover": {
+                        color: "#000",
+                      },
+                      "&::after":
+                        pathname === item.href
+                          ? {
+                            content: '""',
+                            position: "absolute",
+                            bottom: -4,
+                            left: 0,
+                            right: 0,
+                            height: 2,
+                            backgroundColor: "#f8bbd9",
+                          }
+                          : {},
+                    }}
+                  >
+                    {item.name}
+                  </Typography>
+                </Link>
+              ))}
+            </Box>
+          )}
 
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {(showDesktopMenu || !mounted) && (
@@ -153,7 +151,7 @@ export default function Header() {
           },
         }}
       >
-        <Box>
+        <Box p={3}>
           <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 3 }}>
             <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
               <Image

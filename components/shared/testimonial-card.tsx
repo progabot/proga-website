@@ -9,7 +9,7 @@ import { Testimonial } from "@/utils/testimonials"
 import Link from "next/link"
 import Image from "next/image"
 
-const Shell = styled(Box)(({ theme }) => ({
+const Shell = styled(Box)<{ light?: boolean }>(({ theme, light }) => ({
   position: "relative",
   isolation: "isolate",
   "--notch": "76px",
@@ -25,7 +25,7 @@ const Shell = styled(Box)(({ theme }) => ({
     position: "absolute",
     inset: "-1px",                 
     zIndex: 0,
-    background: "rgba(255, 255, 255, 0.25)",
+    background: light ? "rgba(0, 0, 0, 0.15)" : "rgba(255, 255, 255, 0.25)",
     /* notch + 1px so the diagonal stays parallel to the inner shape */
     "--nb": "calc(var(--notch) + 1px)",
     clipPath:
@@ -40,7 +40,7 @@ const Shell = styled(Box)(({ theme }) => ({
     position: "absolute",
     inset: 0,
     zIndex: 0,
-    background: "#1a1a1a",
+    background: light ? "#ffffff" : "#1a1a1a",
     clipPath:
       "polygon(0 0, calc(100% - var(--notch)) 0, 100% var(--notch), 100% 100%, var(--notch) 100%, 0 calc(100% - var(--notch)))",
     transition: "background .35s ease, transform .35s ease",
@@ -54,23 +54,23 @@ const Shell = styled(Box)(({ theme }) => ({
 }));
 
 
-const Card = styled(Box)(({ theme }) => ({
+const Card = styled(Box)<{ light?: boolean }>(({ theme, light }) => ({
   position: "relative",
   zIndex: 1,
-  background: "#1a1a1a",
-  color: "#eaeaea",
+  background: light ? "#ffffff" : "#1a1a1a",
+  color: light ? "#2a2a2a" : "#eaeaea",
   padding: theme.spacing(5),
 }));
 
-export default function TestimonialCard({ testimonial }: { testimonial: Testimonial} ) {
+export default function TestimonialCard({ testimonial, light = false }: { testimonial: Testimonial, light?: boolean }) {
   return (
-    <Shell>
-      <Card>
+    <Shell light={light}>
+      <Card light={light}>
         <Stack spacing={4}>
           {/* Header: avatar + name + role */}
           <Stack direction="row" spacing={2} alignItems="center">
             <Avatar
-              src={testimonial.authorImage || "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=128&auto=format&fit=crop"}
+              src={testimonial.authorImage}
               alt={testimonial.authorName}
               sx={{ width: 52, height: 52 }}
             />
@@ -78,15 +78,15 @@ export default function TestimonialCard({ testimonial }: { testimonial: Testimon
               <Typography variant="h6" fontWeight={600} gutterBottom={false}>
                 {testimonial.authorName}
               </Typography>
-              <Typography variant="body1" sx={{ color: "#a5a5a5" }}>
+              <Typography variant="body1" sx={{ color: light ? "#666666" : "#a5a5a5" }}>
                 {testimonial.authorTitle}
               </Typography>
             </Box>
           </Stack>
 
           <Box display="flex" gap={2}>
-            <Typography variant="h5" sx={{ lineHeight:1, fontSize: "70px", color: "#EFBED2" }} fontWeight={300}>
-              “
+            <Typography variant="h5" sx={{ display: { xs: "none", sm: "block" }, lineHeight: 1, fontSize: "70px", color: light ? "#D6336C" : "#EFBED2" }} fontWeight={300}>
+              "
             </Typography>
             <Stack spacing={4} mt={3}>
             <Typography variant="h5" sx={{ lineHeight: 1.5 }} fontWeight={300}>
@@ -98,12 +98,12 @@ export default function TestimonialCard({ testimonial }: { testimonial: Testimon
               <Button
                 variant="outlined"
                 sx={{
-                  borderColor: "rgba(255,255,255,0.35)",
-                  color: "#eaeaea",
+                  borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
+                  color: light ? "#2a2a2a" : "#eaeaea",
                   px: 3,
                   "&:hover": {
-                    backgroundColor: "#333",
-                    borderColor: "#666",
+                    backgroundColor: light ? "#f5f5f5" : "#333",
+                    borderColor: light ? "#999" : "#666",
                   },
                 }}
                 endIcon={<span style={{ fontSize: 18 }}>↗</span>}
@@ -120,12 +120,12 @@ export default function TestimonialCard({ testimonial }: { testimonial: Testimon
                 rel="noopener noreferrer"
                 variant="outlined"
                 sx={{
-                  borderColor: "rgba(255,255,255,0.35)",
-                  color: "#eaeaea",
+                  borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
+                  color: light ? "#2a2a2a" : "#eaeaea",
                   px: 3,
                   "&:hover": {
-                    backgroundColor: "#333",
-                    borderColor: "#666",
+                    backgroundColor: light ? "#f5f5f5" : "#333",
+                    borderColor: light ? "#999" : "#666",
                   },
                 }}
                 endIcon={<span style={{ fontSize: 18 }}>↗</span>}

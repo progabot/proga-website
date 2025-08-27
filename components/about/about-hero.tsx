@@ -3,7 +3,7 @@ import { Typography, Container } from "@mui/material"
 
 export default function AboutHero() {
   return (
-    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
+    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ pt: 8 }}>
       <Typography
         variant="h1"
         sx={{

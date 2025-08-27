@@ -50,34 +50,15 @@ export default function Footer() {
           </Box>
 
           {/* Clutch Badge */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <Box>
-            <Typography variant="caption" sx={{ color: "#666", fontSize: "0.75rem" }}>
-              REVIEWED ON
-            </Typography>
-            <Typography variant="h6" sx={{ fontWeight: "bold", color: "#333" }}>
-              Clutch
-            </Typography>
-            </Box>
-            <Box>
-            <Box sx={{ display: "flex", gap: 0.25 }}>
-              {[...Array(5)].map((_, i) => (
-                <Typography key={i} sx={{ color: "#ff4444", fontSize: "1rem" }}>
-                  ★
-                </Typography>
-              ))}
-            </Box>
-            <Typography variant="caption" sx={{ color: "#666", fontSize: "0.75rem" }}>
-              5 REVIEWS
-            </Typography>
-            </Box>
-          </Box>
+          {/* <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="45" data-nofollow="false" data-expandifr="true" data-scale="100" data-clutchcompany-id="2281469"></div> */}
         </Box>
 
         <Box sx={{ display: "flex", gap: 1, mb: 4, justifyContent: "flex-start" }}>
           <IconButton
-            component={Link}
-            href="#"
+            component="a"
+            href="https://www.facebook.com/profile.php?id=61567231930216"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               backgroundColor: "#f8bbd9",
               color: "#333",
@@ -89,8 +70,10 @@ export default function Footer() {
             <Facebook fontSize="small" />
           </IconButton>
           <IconButton
-            component={Link}
-            href="#"
+            component="a"
+            href="https://x.com/proga_tech"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               backgroundColor: "#f8bbd9",
               color: "#333",
@@ -102,8 +85,10 @@ export default function Footer() {
             <XIcon fontSize="small" />
           </IconButton>
           <IconButton
-            component={Link}
-            href="#"
+            component="a"
+            href="https://www.instagram.com/proga.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               backgroundColor: "#f8bbd9",
               color: "#333",
@@ -115,8 +100,10 @@ export default function Footer() {
             <Instagram fontSize="small" />
           </IconButton>
           <IconButton
-            component={Link}
-            href="#"
+            component="a"
+            href="https://www.linkedin.com/company/proga-tech/posts/?feedView=all"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               backgroundColor: "#f8bbd9",
               color: "#333",
@@ -126,19 +113,6 @@ export default function Footer() {
             }}
           >
             <LinkedIn fontSize="small" />
-          </IconButton>
-          <IconButton
-            component={Link}
-            href="#"
-            sx={{
-              backgroundColor: "#f8bbd9",
-              color: "#333",
-              width: 40,
-              height: 40,
-              "&:hover": { backgroundColor: "#f0a6d1" },
-            }}
-          >
-            <GitHub fontSize="small" />
           </IconButton>
         </Box>
 
@@ -156,11 +130,11 @@ export default function Footer() {
           {/* Logo and Copyright */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
             <Image
-                src="/progatech-logo-small.png"
-                alt="ProgaTech"
-                width={32}
-                height={32}
-              />
+              src="/progatech-logo-small.png"
+              alt="ProgaTech"
+              width={32}
+              height={32}
+            />
             <Typography variant="body2" sx={{ color: "#666" }}>
               © 2025 ProgaTech, Inc. All rights reserved.
             </Typography>

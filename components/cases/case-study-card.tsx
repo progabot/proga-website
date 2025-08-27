@@ -26,32 +26,49 @@ export default function CaseStudyCard({
   reverse = false,
 }: CaseStudyCardProps) {
   return (
-    <Box
-      sx={{
-        borderRadius: 3,
-        overflow: "hidden",
-        minHeight: 500,
-      }}
-    >
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-      
-            <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-              }}
-            >
-              <Image
-                src={mockupImage || "/placeholder.svg"}
-                alt={mockupAlt}
-                width={1320}
-                height={470}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
-              />
-            </Box>
+    <Link href={href} scroll={false} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Box
+        sx={{
+          borderRadius: 3,
+          overflow: "hidden",
+          minHeight: 500,
+          cursor: "pointer",
+          transition: "all 0.3s ease",
+          "&:hover": {
+            transform: "translateY(-2px)",
+            "& .case-study-image": {
+              transform: "scale(1.02)",
+            },
+            "& .case-study-button .MuiSvgIcon-root": {
+              transform: "translate(4px, -4px)",
+            },
+            "& .case-study-button": {
+              textDecoration: "underline",
+            },
+          },
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            overflow: "hidden",
+            borderRadius: 2,
+          }}
+        >
+          <Image
+            src={mockupImage}
+            alt={mockupAlt}
+            width={1320}
+            height={470}
+            className="case-study-image"
+            style={{
+              width: "100%",
+              height: "auto",
+              transition: "transform 0.3s ease",
+            }}
+          />
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -101,7 +118,7 @@ export default function CaseStudyCard({
                   key={tag}
                   label={tag}
                   sx={{
-                    backgroundColor: "#f8bbd9",
+                    backgroundColor: "#EFBED2",
                     color: "#000",
                     fontWeight: 500,
                     fontSize: "0.875rem",
@@ -115,8 +132,7 @@ export default function CaseStudyCard({
             </Box>
 
             <Button
-              component={Link}
-              href={href}
+              className="case-study-button"
               sx={{
                 color: "#000",
                 fontWeight: 600,
@@ -124,26 +140,24 @@ export default function CaseStudyCard({
                 textTransform: "none",
                 p: 0,
                 justifyContent: "flex-start",
+                pointerEvents: "none",
+                transition: "text-decoration 0.2s ease",
                 "&:hover": {
                   backgroundColor: "transparent",
-                  "& .MuiSvgIcon-root": {
-                    transform: "translate(4px, -4px)",
-                  },
+                },
+                "& .MuiSvgIcon-root": {
+                  transition: "transform 0.2s ease",
                 },
               }}
               endIcon={
-                <NorthEast
-                  sx={{
-                    transition: "transform 0.2s ease",
-                  }}
-                />
+                <NorthEast />
               }
             >
               See full case study
             </Button>
           </Box>
         </Box>
-      </Container>
-    </Box>
+      </Box>
+    </Link>
   )
 }

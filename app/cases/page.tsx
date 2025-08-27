@@ -3,6 +3,11 @@ import CaseStudyCard from "@/components/cases/case-study-card"
 import ProjectCTA from "@/components/shared/project-cta"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
+export const metadata = {
+  title: "Case studies | Proga Tech",
+  description: "",
+}
+
 export default function CasesPage() {
   return (
     <Box>

@@ -21,7 +21,7 @@ export default function Hero() {
 
   return (
     <Box component="section" sx={{ backgroundColor: "#ffffff", overflow: "hidden" }}>
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ pt: { xs: 10, md: 10 }, pb: { xs: 10, md: 20 } }}>
+      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ pt: { xs: 6, md: 10 }, pb: { xs: 10, md: 20 } }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <Box sx={{ maxWidth: "80rem", textAlign: "left" }}>
             <Typography
@@ -59,7 +59,7 @@ export default function Hero() {
                 color: "#666",
                 maxWidth: "64rem",
                 lineHeight: 1.6,
-                mb: 12,
+                mb: {xs: 8, md: 12},
               }}
             >
               By combining creativity, deep domain knowledge, and a user-centered development process, we build
@@ -103,7 +103,7 @@ export default function Hero() {
                   },
                 }}
                 component={Link}
-                href="/portfolio"
+                href="/cases"
               >
                 Our works
               </Button>

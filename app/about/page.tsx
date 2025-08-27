@@ -6,8 +6,8 @@ import InstagramSection from "@/components/about/instagram-section"
 import ValuesSection from "@/components/about/values-section"
 
 export const metadata = {
-  title: "About Us | ProgaTech",
-  description: "Learn about ProgaTech's story, team, and mission to grow talent and build meaningful projects",
+  title: "About Us | Proga Tech",
+  description: "",
 }
 
 export default function AboutPage() {

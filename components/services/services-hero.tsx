@@ -6,15 +6,15 @@ import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 const services = [
   {
-    icon: <Computer sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <Computer sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     title: "All in one WEB + Apps development",
   },
   {
-    icon: <Smartphone sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <Smartphone sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     title: "All in one WEB + Apps development",
   },
   {
-    icon: <CreditCard sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <CreditCard sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     title: "Stripe",
   },
 ]

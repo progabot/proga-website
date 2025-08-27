@@ -29,7 +29,8 @@ const processSteps = [
   },
 ]
 
-export default function DevelopmentProcess(){const scrollContainerRef = useRef<HTMLDivElement>(null)
+export default function DevelopmentProcess() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
 
@@ -60,7 +61,8 @@ export default function DevelopmentProcess(){const scrollContainerRef = useRef<H
         left: 300,
         behavior: "smooth",
       })
-  }}
+    }
+  }
 
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#2a2a2a", color: "#fff" }}>

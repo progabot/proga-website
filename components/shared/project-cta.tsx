@@ -3,6 +3,7 @@
 import { Box, Container, Typography, Button } from "@mui/material"
 import { NorthEast } from "@mui/icons-material"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import Link from "next/link"
 
 export default function ProjectCTA() {
   return (
@@ -41,6 +42,8 @@ export default function ProjectCTA() {
           </Typography>
 
           <Button
+            component={Link}
+            href="/contact"
             variant="contained"
             endIcon={<NorthEast />}
             sx={{

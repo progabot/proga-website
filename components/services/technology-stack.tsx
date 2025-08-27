@@ -7,32 +7,32 @@ import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 const techCategories = [
   {
     title: "Backend",
-    icon: <Code sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <Code sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     technologies: ".NET, C#, ASP.NET Core, Java, Node.js, Next.js",
     isDark: true,
   },
   {
     title: "Frontend",
-    icon: <Web sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <Web sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     technologies: "React, Next.js, Vue.js, Blazor, JavaScript, CSS, SCSS",
     isDark: false,
   },
   {
     title: "Database",
-    icon: <Storage sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <Storage sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     technologies: "PostgreSQL, MySQL, MS SQL Server, MongoDB",
     isDark: false,
   },
   {
     title: "Infrastructure",
-    icon: <Cloud sx={{ color: "#e91e63", fontSize: "2rem" }} />,
-    technologies: "AWS, Azure",
+    icon: <Cloud sx={{ color: "#E498B7", fontSize: "2rem" }} />,
+    technologies: "AWS, Azure, Digital Ocean, Google Cloud",
     isDark: false,
   },
   {
     title: "UX/UI",
-    icon: <Palette sx={{ color: "#e91e63", fontSize: "2rem" }} />,
-    technologies: "Figma, Adobe",
+    icon: <Palette sx={{ color: "#E498B7", fontSize: "2rem" }} />,
+    technologies: "Figma, Adobe, Jitter",
     isDark: false,
   },
 ]

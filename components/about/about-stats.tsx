@@ -10,30 +10,46 @@ const stats = [
 
 export default function AboutStats() {
   return (
-    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 6 }}>
+    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 5 }}>
       <Grid container spacing={4}>
         {stats.map((stat, index) => (
-          <Grid item xs={6} md={3} key={index}>
-            <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+          <Grid size={{ xs: 6, md: "auto" }} key={index}>
+            <Box
+              sx={{
+              pl: index !== 0 ? { xs: 0, md: 2 } : 0,
+              pr: { xs: 2, md: 10 },
+              borderRight: {
+                xs:
+                index % 2 === 0 && index !== stats.length - 1
+                  ? "2px solid #F0F0F0"
+                  : "none",
+                md:
+                index !== stats.length - 1
+                  ? "2px solid #F0F0F0"
+                  : "none",
+              },
+              textAlign: { xs: "center", md: "left" },
+              }}
+            >
               <Typography
-                variant="h2"
-                sx={{
-                  fontSize: { xs: "2.5rem", md: "3rem" },
-                  fontWeight: "bold",
-                  color: "#E91E63",
-                  mb: 1,
-                }}
+              variant="h2"
+              sx={{
+                fontSize: { xs: "2.5rem", md: "3rem" },
+                fontWeight: "bold",
+                color: "#E498B7",
+                mb: 1,
+              }}
               >
-                {stat.value}
+              {stat.value}
               </Typography>
               <Typography
-                variant="body2"
-                sx={{
-                  color: "#666666",
-                  fontSize: "1rem",
-                }}
+              variant="body2"
+              sx={{
+                color: "#666666",
+                fontSize: "1rem",
+              }}
               >
-                {stat.label}
+              {stat.label}
               </Typography>
             </Box>
           </Grid>

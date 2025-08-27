@@ -3,6 +3,12 @@ import Image from "next/image"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import Divider from "@mui/material/Divider"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import EruditionTestimonials from "@/components/erudition/testimonials"
+
+export const metadata = {
+  title: "Erudition | Case Study | Proga Tech",
+  description: "",
+}
 
 export default function EruditionCaseStudy() {
   const solutions = [
@@ -37,16 +43,16 @@ export default function EruditionCaseStudy() {
 
   const testimonials = [
     {
-      quote:
-        "Highly recommended. The problems went from easy to hard and towards the end it became a game for me to see if I could beat the score and achieve higher. I ended up with a 22 on PAT thanks to the great practice and techniques from Erudition PAT Prep.",
-      author: "Ronald",
-      institution: "Brigham Young University",
+      authorName: "Ronald",
+		authorTitle: "Brigham Young University",
+		text: "Highly recommended. The problems went from easy to hard and towards the end It became a game for me to see if I could beat the score and achieve higher. I ended up with a 22 on PAT thanks to the great practice and techniques from Erudition PAT Prep.",
+
     },
     {
-      quote:
-        "Your PAT videos were the absolute best by far. I loved how you broke down problems and [other]'s videos were not helpful. I loved the examples in your videos and it helped me tremendously.",
-      author: "John",
-      institution: "McMaster University",
+      authorName: "John",
+		authorTitle: "McMaster University",
+		text: "Your PAT videos were the absolute best by far. I was dying on the Keyhole problems and [other]’s videos were not helping. You actually did difficult examples in your videos and it helped me tremendously!",
+
     },
   ]
 
@@ -85,16 +91,14 @@ export default function EruditionCaseStudy() {
               <Chip
                 label="Education"
                 sx={{
-                  backgroundColor: "#f8d7da",
-                  color: "#721c24",
+                  backgroundColor: "#EFBED2",
                   fontWeight: 500,
                 }}
               />
               <Chip
                 label="E-learning"
                 sx={{
-                  backgroundColor: "#f8d7da",
-                  color: "#721c24",
+                  backgroundColor: "#EFBED2",
                   fontWeight: 500,
                 }}
               />
@@ -171,14 +175,28 @@ export default function EruditionCaseStudy() {
               </Box>
             </Grid>
 
-            <Grid item size={{ xs: 12, md: 6 }}>
-              <Image
-                src="/erudition-explanations-mockup.png"
-                alt="Erudition explanations interface"
-                width={500}
-                height={600}
-                style={{ maxWidth: "100%", height: "auto" }}
-              />
+            <Grid item size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
+              <Box
+                sx={{
+                  // height: { xs: "auto", lg: "100%" },
+                  width: "100%",
+                  overflow: { lg: "visible" },
+                  display: "flex",
+                  alignItems: { lg: "center" },
+                  "& img": {
+                    height: { xs: "auto", lg: "100%" },
+                    width: { xs: "100%", md: "1000px" },
+                    objectFit: { lg: "contain" }
+                  }
+                }}
+              >
+                <Image
+                  src="/erudition-explanations-mockup.png"
+                  alt="Erudition explanations interface"
+                  width={500}
+                  height={600}
+                />
+              </Box>
             </Grid>
           </Grid>
         </Container>
@@ -190,6 +208,9 @@ export default function EruditionCaseStudy() {
           <Grid item size={{ xs: 12, md: 6 }}>
             <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
               Solutions
+            </Typography>
+            <Typography variant="body1" sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}>
+              Master new skills the smart way. Personalized learning plans, progress tracking, and study tools that actually help you remember what you learn.
             </Typography>
           </Grid>
           <Grid item size={{ xs: 12, md: 6 }}>
@@ -226,49 +247,9 @@ export default function EruditionCaseStudy() {
       />
 
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 6 }}>
-          <Typography variant="h3" component="h2" sx={{ fontWeight: "bold" }}>
-            Why learners choose Erudition
-          </Typography>
-          <Box sx={{ display: "flex", gap: 1 }}>
-            <Button variant="outlined" sx={{ minWidth: 40, height: 40, borderRadius: "50%" }}>
-              ←
-            </Button>
-            <Button variant="outlined" sx={{ minWidth: 40, height: 40, borderRadius: "50%" }}>
-              →
-            </Button>
-          </Box>
-        </Box>
-
         <Grid container spacing={4}>
-          {testimonials.map((testimonial, index) => (
-            <Grid item size={{ xs: 12, md: 6 }} key={index}>
-              <Card sx={{ p: 3, height: "100%", border: "1px solid #e0e0e0" }}>
-                <CardContent sx={{ p: 0 }}>
-                  <Typography variant="h4" sx={{ color: "#f8d7da", mb: 2, fontSize: "2rem" }}>
-                    "
-                  </Typography>
-                  <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.6 }}>
-                    {testimonial.quote}
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                    {testimonial.author}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                    {testimonial.institution}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          <EruditionTestimonials />
         </Grid>
-
-        <Box sx={{ backgroundColor: "#f5f5f5", p: 3, mt: 4, borderRadius: 2 }}>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            💡 Join students who are building real understanding with Erudition or explore it on YouTube to see how we
-            make learning visual, fun, and effective.
-          </Typography>
-        </Box>
       </Container>
 
       <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
@@ -281,9 +262,8 @@ export default function EruditionCaseStudy() {
             <Grid item size={{ xs: 12, md: 6 }}>
               <Card
                 sx={{ backgroundColor: "#1a1a1a", color: "white", height: "100%", border: "1px solid #737373" }}
-                pb={0}
               >
-                <CardContent sx={{ p: 0, display: "flex" }}>
+                <CardContent sx={{ p: 0, paddingBottom: '0 !important', display: "flex" }}>
                   <Box
                     p={2}
                     pr={0}
@@ -300,6 +280,10 @@ export default function EruditionCaseStudy() {
                     </Box>
                     <Button
                       variant="contained"
+                      component="a"
+                      href="https://eruditionprep.com/dat/pat/question-of-the-week"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       sx={{
                         backgroundColor: "#85CF91",
                         color: "black",
@@ -308,10 +292,14 @@ export default function EruditionCaseStudy() {
                       }}
                       endIcon={<ArrowForwardIcon />}
                     >
-                      Play Erudition PAT https://eruditionprep.com/dat/pat/question-of-the-week
+                      Play Erudition PAT
                     </Button>
                   </Box>
-                  <Box sx={{ textAlign: "center" }}>
+                  <Box sx={{ textAlign: "center" }} 
+                    display="flex"
+                    justifyContent="end"
+                    flexDirection="column"
+                    alignItems="baseline">
                     <Image
                       src="/erudition-dat.png"
                       alt="Erudition DAT mobile app"
@@ -326,7 +314,7 @@ export default function EruditionCaseStudy() {
 
             <Grid item size={{ xs: 12, md: 6 }}>
               <Card sx={{ backgroundColor: "#1a1a1a", color: "white", height: "100%", border: "1px solid #737373" }}>
-                <CardContent sx={{ p: 0, display: "flex" }}>
+                <CardContent sx={{ p: 0, paddingBottom: '0 !important', display: "flex", height: "100%" }}>
                   <Box
                     p={2}
                     pr={0}
@@ -343,6 +331,10 @@ export default function EruditionCaseStudy() {
                     </Box>
                     <Button
                       variant="contained"
+                      component="a"
+                      href="https://grewordoftheday.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       sx={{
                         backgroundColor: "#85CF91",
                         color: "black",
@@ -351,10 +343,14 @@ export default function EruditionCaseStudy() {
                       }}
                       endIcon={<ArrowForwardIcon />}
                     >
-                      Boost your GRE Vocab https://grewordoftheday.com/
+                      Boost your GRE Vocab
                     </Button>
                   </Box>
-                  <Box sx={{ textAlign: "center" }}>
+                  <Box sx={{ textAlign: "center" }} 
+                    display="flex"
+                    justifyContent="end"
+                    flexDirection="column"
+                    alignItems="baseline">
                     <Image
                       src="/erudition-vocab.png"
                       alt="Erudition DAT mobile app"
@@ -378,7 +374,7 @@ export default function EruditionCaseStudy() {
             </Typography>
           </Grid>
           <Grid item size={{ xs: 12, md: 6 }}>
-            <Typography variant="h5" sx={{ fontWeight: 600, mb: 3, color: "#f8d7da" }}>
+            <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
               Frontend
             </Typography>
             <Box sx={{ mb: 2 }}>
@@ -396,7 +392,7 @@ export default function EruditionCaseStudy() {
                 • REST API integration for seamless data communication
               </Typography>
             </Box>
-            <Typography variant="h5" sx={{ fontWeight: 600, mb: 3, color: "#e1bee7" }}>
+            <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
               Backend
             </Typography>
             <Box sx={{ mb: 2 }}>
@@ -419,7 +415,7 @@ export default function EruditionCaseStudy() {
                 • REST API architecture for scalable service communication
               </Typography>
             </Box>
-            <Typography variant="h5" sx={{ fontWeight: 600, mb: 3, color: "#ffcdd2" }}>
+            <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
               DevOps
             </Typography>
             <Box sx={{ mb: 2 }}>
@@ -458,8 +454,8 @@ export default function EruditionCaseStudy() {
               <Image
                 src="/stripe-logo.png"
                 alt="Stripe"
-                width={80}
-                height={40}
+                width={200}
+                height={100}
                 style={{ maxWidth: "100%", height: "auto" }}
               />
             </Box>
@@ -468,7 +464,7 @@ export default function EruditionCaseStudy() {
       </Container>
 
       {/* Have a project idea? Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
+      {/* <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
         <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
           <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 3 }}>
             Have a project idea?
@@ -488,10 +484,10 @@ export default function EruditionCaseStudy() {
             Contact us
           </Button>
         </Container>
-      </Box>
+      </Box> */}
 
       {/* Check out other cases Section */}
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
+      {/* <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
         <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
           Check out other cases
         </Typography>
@@ -541,7 +537,7 @@ export default function EruditionCaseStudy() {
             </Card>
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
     </Box>
   )
 }

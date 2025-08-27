@@ -7,19 +7,19 @@ import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 const services = [
   {
-    icon: <Computer sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <Computer sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     title: "AI-driven WEB development",
     description: "",
     isDark: true,
   },
   {
-    icon: <Smartphone sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <Smartphone sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     title: "All in one WEB + Apps development",
     description: "",
     isDark: false,
   },
   {
-    icon: <CreditCard sx={{ color: "#e91e63", fontSize: "2rem" }} />,
+    icon: <CreditCard sx={{ color: "#E498B7", fontSize: "2rem" }} />,
     title: "Stripe",
     description: "",
     isDark: false,
@@ -34,7 +34,7 @@ export default function Services() {
           <Grid item size={{xs:12,lg:6}}>
                       <Typography
               variant="h2"
-              sx={{ fontSize: { xs: "1.75rem", md: "2rem" }, fontWeight: 400, mb: 4, color: "#000" }}
+              sx={{ fontSize: { xs: "1.75rem", md: "2rem" }, mb: 4, color: "#000" }}
             >
               Services we provide
             </Typography>

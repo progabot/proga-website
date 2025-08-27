@@ -13,6 +13,11 @@ function LoadingSpinner() {
   )
 }
 
+export const metadata = {
+  title: "Careers | Proga Tech",
+  description: "",
+}
+
 export default function CareersPage() {
   return (
     <Box component="main" sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>

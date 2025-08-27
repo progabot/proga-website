@@ -29,7 +29,7 @@ const missionItems = [
 
 export default function Mission() {
   return (
-    <Box sx={{ py: 8, backgroundColor: "#ffffff" }}>
+    <Box sx={{ pt: 8, backgroundColor: "#ffffff" }}>
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <Typography
           variant="h2"
@@ -64,7 +64,7 @@ export default function Mission() {
                       <IconComponent
                         sx={{
                           fontSize: 24,
-                          color: "#e91e63",
+                          color: "#E498B7",
                         }}
                       />
                     </Box>

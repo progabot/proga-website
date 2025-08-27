@@ -5,8 +5,8 @@ import ContactInfo from "@/components/contact/contact-info"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 export const metadata = {
-  title: "Contact Us | ProgaTech",
-  description: "Get in touch with ProgaTech for inquiries and collaborations",
+  title: "Contact Us | Proga Tech",
+  description: "",
 }
 
 function LoadingSpinner() {
@@ -50,14 +50,14 @@ export default function ContactPage() {
 
       <Box component="section" sx={{ pb: 8 }}>
         <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-          <Grid container spacing={6}>
-            <Grid item size={{xs:12,lg:6}}>
+          <Grid container spacing={2}>
+            {/* <Grid size={{xs:12,lg:6}}>
               <Suspense fallback={<LoadingSpinner />}>
                 <ContactForm />
               </Suspense>
-            </Grid>
+            </Grid> */}
 
-            <Grid item size={{xs:12,lg:6}}>
+            <Grid size={{xs:12,lg:6}}>
               <Suspense fallback={<LoadingSpinner />}>
                 <ContactInfo />
               </Suspense>
