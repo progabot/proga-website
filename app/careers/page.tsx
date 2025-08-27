@@ -1,0 +1,36 @@
+import { Suspense } from "react"
+import { Box, CircularProgress } from "@mui/material"
+import CareersHero from "@/components/careers/careers-hero"
+import WhyChooseProga from "@/components/careers/why-choose-proga"
+import JobListings from "@/components/careers/job-listings"
+import ContactCTA from "@/components/careers/contact-cta"
+
+function LoadingSpinner() {
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", py: 10 }}>
+      <CircularProgress />
+    </Box>
+  )
+}
+
+export default function CareersPage() {
+  return (
+    <Box component="main" sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Suspense fallback={<LoadingSpinner />}>
+        <CareersHero />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <WhyChooseProga />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <JobListings />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <ContactCTA />
+      </Suspense>
+    </Box>
+  )
+}

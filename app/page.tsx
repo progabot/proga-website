@@ -1,0 +1,51 @@
+import { Suspense } from "react"
+import { Box, CircularProgress } from "@mui/material"
+import Hero from "@/components/home/hero"
+import TrustedBy from "@/components/home/trusted-by"
+import DevelopmentProcess from "@/components/home/development-process"
+import Services from "@/components/home/services"
+import Testimonials from "@/components/home/testimonials"
+import Mission from "@/components/home/mission"
+import ProjectCTA from "@/components/shared/project-cta"
+
+function LoadingSpinner() {
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", py: 10 }}>
+      <CircularProgress />
+    </Box>
+  )
+}
+
+export default function HomePage() {
+  return (
+    <Box component="main" sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Hero />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <TrustedBy />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <DevelopmentProcess />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <Services />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <Testimonials />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <Mission />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <ProjectCTA />
+      </Suspense>
+    </Box>
+  )
+}
