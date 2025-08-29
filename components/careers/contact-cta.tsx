@@ -1,5 +1,5 @@
 import { Container, Typography, Box, Button } from "@mui/material"
-import { NorthEast } from "@mui/icons-material"
+import { East, NorthEast } from "@mui/icons-material"
 import Link from "next/link"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
@@ -50,7 +50,7 @@ export default function ContactCTA() {
               backgroundColor: "#333",
             },
           }}
-          endIcon={<NorthEast />}
+          endIcon={<East />}
           component={Link}
           href="/contact"
         >

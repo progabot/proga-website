@@ -8,6 +8,7 @@ import { styled } from "@mui/material/styles";
 import { Testimonial } from "@/utils/testimonials"
 import Link from "next/link"
 import Image from "next/image"
+import { East } from "@mui/icons-material";
 
 const Shell = styled(Box)<{ light?: boolean }>(({ theme, light }) => ({
   position: "relative",
@@ -23,7 +24,7 @@ const Shell = styled(Box)<{ light?: boolean }>(({ theme, light }) => ({
   "&::before": {
     content: '""',
     position: "absolute",
-    inset: "-1px",                 
+    inset: "-1px",
     zIndex: 0,
     background: light ? "rgba(0, 0, 0, 0.15)" : "rgba(255, 255, 255, 0.25)",
     /* notch + 1px so the diagonal stays parallel to the inner shape */
@@ -89,52 +90,52 @@ export default function TestimonialCard({ testimonial, light = false }: { testim
               "
             </Typography>
             <Stack spacing={4} mt={3}>
-            <Typography variant="h5" sx={{ lineHeight: 1.5 }} fontWeight={300}>
-              {testimonial.text}
-            </Typography>
+              <Typography variant="h5" sx={{ lineHeight: 1.5 }} fontWeight={300}>
+                {testimonial.text}
+              </Typography>
 
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-              {testimonial.caseStudyId && (
-              <Button
-                variant="outlined"
-                sx={{
-                  borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
-                  color: light ? "#2a2a2a" : "#eaeaea",
-                  px: 3,
-                  "&:hover": {
-                    backgroundColor: light ? "#f5f5f5" : "#333",
-                    borderColor: light ? "#999" : "#666",
-                  },
-                }}
-                endIcon={<span style={{ fontSize: 18 }}>↗</span>}
-                component={Link}
-                href={`/cases/${testimonial.caseStudyId}`}
-              >
-                See full case study
-              </Button>)}
-              {testimonial.clutchLink && (
-              <Button
-                component="a"
-                href={testimonial.clutchLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="outlined"
-                sx={{
-                  borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
-                  color: light ? "#2a2a2a" : "#eaeaea",
-                  px: 3,
-                  "&:hover": {
-                    backgroundColor: light ? "#f5f5f5" : "#333",
-                    borderColor: light ? "#999" : "#666",
-                  },
-                }}
-                endIcon={<span style={{ fontSize: 18 }}>↗</span>}
-              >
-              <Image src={"/icons/clutch.png"} alt={`Clutch`} width={24} height={24} style={{ marginRight: "10px" }} />
-                Read on Clutch
-              </Button>
-              )}
-            </Stack>
+              <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+                {testimonial.caseStudyId && (
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
+                      color: light ? "#2a2a2a" : "#eaeaea",
+                      px: 3,
+                      "&:hover": {
+                        backgroundColor: light ? "#f5f5f5" : "#333",
+                        borderColor: light ? "#999" : "#666",
+                      },
+                    }}
+                    endIcon={<East />}
+                    component={Link}
+                    href={`/cases/${testimonial.caseStudyId}`}
+                  >
+                    See full case study
+                  </Button>)}
+                {testimonial.clutchLink && (
+                  <Button
+                    component="a"
+                    href={testimonial.clutchLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outlined"
+                    sx={{
+                      borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
+                      color: light ? "#2a2a2a" : "#eaeaea",
+                      px: 3,
+                      "&:hover": {
+                        backgroundColor: light ? "#f5f5f5" : "#333",
+                        borderColor: light ? "#999" : "#666",
+                      },
+                    }}
+                    endIcon={<span style={{ fontSize: 18 }}>↗</span>}
+                  >
+                    <Image src={"/icons/clutch.png"} alt={`Clutch`} width={24} height={24} style={{ marginRight: "10px" }} />
+                    Read on Clutch
+                  </Button>
+                )}
+              </Stack>
             </Stack>
           </Box>
         </Stack>

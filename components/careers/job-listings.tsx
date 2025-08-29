@@ -1,5 +1,5 @@
 import { Container, Typography, Box, Grid, Card, CardContent, Chip, Button } from "@mui/material"
-import { LocationOn, Schedule, NorthEast } from "@mui/icons-material"
+import { LocationOn, Schedule, NorthEast, East } from "@mui/icons-material"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 import Link from "next/link"
 
@@ -86,7 +86,7 @@ export default function JobListings() {
                           backgroundColor: "rgba(255,255,255,0.1)",
                         },
                       }}
-                      endIcon={<NorthEast />}
+                      endIcon={<East />}
                     >
                       Apply now
                     </Button>

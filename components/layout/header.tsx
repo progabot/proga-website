@@ -18,7 +18,7 @@ import {
   ListItemText,
   useTheme,
 } from "@mui/material"
-import { Menu, Close, NorthEast } from "@mui/icons-material"
+import { Menu, Close, NorthEast, East } from "@mui/icons-material"
 import Image from "next/image"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
@@ -123,7 +123,7 @@ export default function Header() {
                     backgroundColor: "#333",
                   },
                 }}
-                endIcon={<NorthEast />}
+                endIcon={<East />}
                 component={Link}
                 href="/contact"
               >
@@ -207,7 +207,7 @@ export default function Header() {
                   backgroundColor: "#333",
                 },
               }}
-              endIcon={<NorthEast />}
+              endIcon={<East />}
               component={Link}
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}

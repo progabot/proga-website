@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Box, Container, Typography, Button, Grid, Card, CardContent, Chip, Stack, ButtonProps, SxProps } from "@mui/material"
-import { NorthEast } from "@mui/icons-material"
+import { East, NorthEast } from "@mui/icons-material"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 const caseStudies = [
@@ -85,7 +85,7 @@ export default function TrustedBy() {
                         transform: "scale(1.03)",
                       },
                       "& .case-study-link .MuiSvgIcon-root": {
-                        transform: "translate(4px, -4px)",
+                        transform: "translate(2px, 0)",
                       },
                       "& .case-study-link .case-study-text": {
                         textDecoration: "underline",
@@ -151,7 +151,7 @@ export default function TrustedBy() {
                       >
                         See full case study
                       </Typography>
-                      <NorthEast sx={{
+                      <East sx={{
                         fontSize: 16,
                         color: "#000",
                         transition: "transform 0.2s ease",

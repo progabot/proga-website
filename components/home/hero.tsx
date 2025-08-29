@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Box, Container, Typography, Button, Stack } from "@mui/material"
 import { motion } from "framer-motion"
-import { NorthEast } from "@mui/icons-material"
+import { East, NorthEast } from "@mui/icons-material"
 import { useState, useEffect } from "react"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
@@ -80,7 +80,7 @@ export default function Hero() {
                     backgroundColor: "#333",
                   },
                 }}
-                endIcon={<NorthEast />}
+                endIcon={<East />}
                 component={Link}
                 href="/contact"
               >

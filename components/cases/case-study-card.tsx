@@ -1,5 +1,5 @@
 import { Box, Typography, Chip, Button, Container } from "@mui/material"
-import { NorthEast } from "@mui/icons-material"
+import { East, NorthEast } from "@mui/icons-material"
 import Image from "next/image"
 import Link from "next/link"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
@@ -40,7 +40,7 @@ export default function CaseStudyCard({
               transform: "scale(1.02)",
             },
             "& .case-study-button .MuiSvgIcon-root": {
-              transform: "translate(4px, -4px)",
+              transform: "translate(2px, 0)",
             },
             "& .case-study-button": {
               textDecoration: "underline",
@@ -150,7 +150,7 @@ export default function CaseStudyCard({
                 },
               }}
               endIcon={
-                <NorthEast />
+                <East />
               }
             >
               See full case study

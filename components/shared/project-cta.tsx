@@ -1,7 +1,7 @@
 "use client"
 
 import { Box, Container, Typography, Button } from "@mui/material"
-import { NorthEast } from "@mui/icons-material"
+import { East, NorthEast } from "@mui/icons-material"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 import Link from "next/link"
 
@@ -45,7 +45,7 @@ export default function ProjectCTA() {
             component={Link}
             href="/contact"
             variant="contained"
-            endIcon={<NorthEast />}
+            endIcon={<East />}
             sx={{
               backgroundColor: "#ffffff",
               color: "#000000",
