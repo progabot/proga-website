@@ -75,7 +75,7 @@ export default function Header() {
           </Link>
 
           {(showDesktopMenu || !mounted) && (
-            <Box sx={{ display: "flex", gap: 4 }}>
+            <Box sx={{ display: "flex", gap: 4, position: "absolute", left: '50%;', top: '50%', transform: "translate(-50%, -50%)" }}>
               {navigation.map((item) => (
                 <Link key={item.name} href={item.href} style={{ textDecoration: "none" }}>
                   <Typography
