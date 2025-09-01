@@ -78,7 +78,7 @@ export default function ValuesSection() {
     <StickyTwoColumnLayout
       stickyContent={stickyContent}
       mainContent={mainContent}
-      containerProps={{ sx: { color: "white" } }}
+      containerProps={{ sx: { color: "white", backgroundColor: "#1a1a1a" } }}
     />
   )
 }

@@ -4,6 +4,9 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import Divider from "@mui/material/Divider"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 import EruditionTestimonials from "@/components/erudition/testimonials"
+import CaseStudyOverview from "@/components/cases/case-study-overview"
+import ChallengesList from "@/components/cases/challenges-list"
+import SolutionsList from "@/components/cases/solutions-list"
 
 export const metadata = {
   title: "Stridist | Case Study | Proga Tech",
@@ -119,88 +122,31 @@ export default function StridistCaseStudy() {
       </Container>
 
       {/* Overview Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8, overflowX: "hidden" }}>
-        <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-          <Grid container spacing={8}>
-            <Grid item size={{ xs: 12, md: 6 }}>
-              <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 4 }}>
-                Overview
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
-                An online platform for fitness trainers that helps them manage their clients, create personalized programs, and grow their business from anywhere.
-              </Typography>
+      <CaseStudyOverview
+        image={{
+          src: "/cases/stridist/overview-cover.png",
+          alt: "Stridist explanations interface",
+          width: 500,
+          height: 600
+        }}
+      >
+        <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
+          An online platform for fitness trainers that helps them manage their clients, create personalized programs, and grow their business from anywhere.
+        </Typography>
 
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
-                Challenges
-              </Typography>
-              
-              <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
-                Fitness and nutrition coaches often face challenges in managing their clients, creating personalized programs, tracking progress, and handling administrative tasks efficiently. Many rely on a fragmented set of tools, leading to inefficiencies, increased costs for both coaches and their clients. The core challenge was to consolidate these disparate functions into a single, intuitive, and powerful platform that caters specifically to the needs of fitness professionals.
-              </Typography>
-            </Grid>
+        <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
+          Challenges
+        </Typography>
+        
+        <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
+          Fitness and nutrition coaches often face challenges in managing their clients, creating personalized programs, tracking progress, and handling administrative tasks efficiently. Many rely on a fragmented set of tools, leading to inefficiencies, increased costs for both coaches and their clients. The core challenge was to consolidate these disparate functions into a single, intuitive, and powerful platform that caters specifically to the needs of fitness professionals.
+        </Typography>
+      </CaseStudyOverview>
 
-            <Grid item size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
-              <Box
-                sx={{
-                  // height: { xs: "auto", lg: "100%" },
-                  width: "100%",
-                  overflow: { lg: "visible" },
-                  display: "flex",
-                  alignItems: { lg: "center" },
-                  "& img": {
-                    height: { xs: "auto", lg: "100%" },
-                    width: { xs: "100%", md: "1000px" },
-                    objectFit: { lg: "contain" }
-                  }
-                }}
-              >
-                <Image
-                  src="/cases/stridist/overview-cover.png"
-                  alt="Stridist explanations interface"
-                  width={500}
-                  height={600}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Solutions Section */}
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          <Grid item size={{ xs: 12, md: 6 }}>
-            <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
-              Solutions
-            </Typography>
-            <Typography variant="body1" sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}>
-              Everything you need to run your coaching business like a pro. Build workouts your clients love, track their progress, manage communications, and grow your business while we take care of the boring admin work so you can focus on coaching.
-            </Typography>
-          </Grid>
-          <Grid item size={{ xs: 12, md: 6 }}>
-            {solutions.map((solution, index) => (
-              <>
-                <Box key={index} display="flex" gap={4}>
-                  <Box>
-                    <Typography variant="h4" sx={{ color: "#f8d7da", fontWeight: 600, mb: 1 }}>
-                      [{String(index + 1).padStart(2, "0")}]
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                      {solution.title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.6 }}>
-                      {solution.description}
-                    </Typography>
-                  </Box>
-                </Box>
-                {index !== solutions.length - 1 && <Divider sx={{ my: 2 }} />}
-              </>
-            ))}
-          </Grid>
-        </Grid>
-      </Container>
+      <SolutionsList 
+        solutions={solutions}
+        subtitle="Everything you need to run your coaching business like a pro. Build workouts your clients love, track their progress, manage communications, and grow your business while we take care of the boring admin work so you can focus on coaching."
+      />
 
       <Image
         src="/cases/stridist/showcase.png"

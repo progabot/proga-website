@@ -34,22 +34,8 @@ export default function ContactForm() {
     setIsSubmitting(true)
     setFormStatus("idle")
 
-    try {
-      const response = await fetch("https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ba35d02f-0b7f-4e3e-b8f5-ef0e34bac51d/default/proga-website-form-submission-on-contact-us", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-
+    try{
       setFormStatus("success")
-      // Reset form after successful submission
-      // form.reset()
     } catch (error) {
       console.error("Form submission error:", error)
       setFormStatus("error")

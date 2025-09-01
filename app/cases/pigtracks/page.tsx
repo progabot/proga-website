@@ -4,6 +4,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import Divider from "@mui/material/Divider"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 import EruditionTestimonials from "@/components/erudition/testimonials"
+import CaseStudyHero from "@/components/cases/case-study-hero"
+import CaseStudyOverview from "@/components/cases/case-study-overview"
+import ChallengesList from "@/components/cases/challenges-list"
+import SolutionsList from "@/components/cases/solutions-list"
 
 export const metadata = {
   title: "PigTracks | Case Study | Proga Tech",
@@ -11,32 +15,35 @@ export const metadata = {
 }
 
 export default function PigtracksCaseStudy() {
+  const challenges = [
+    { text: "Fragmented field data" },
+    { text: "Raw complexity of field inputs" },
+    { text: "Manual workflows & compliance risks" },
+    { text: "No real‑time pig visibility" },
+    { text: "Disconnected team coordination" },
+    { text: "Scaling across large operations" },
+  ]
+
   const solutions = [
     {
-      title: "",
       description:
         "Seamless integration from surveys to SiteDoc 360",
     },
     {
-      title: "",
       description:
         'Intelligent data transformation with ML, IoT, cloud sync',
     },
     {
-      title: "",
       description:
         "Automated workflows, alerts, and regulatory reporting",
     },
     {
-      title: "",
       description: "Live tracking dashboards with anomaly detection",
     },
     {
-      title: "",
       description: "Unified cloud platform for collaboration between operatorsand providers",
     },
     {
-      title: "",
       description: "Flexible execution tools that support enterprise-level deployment",
     },
   ]
@@ -44,14 +51,14 @@ export default function PigtracksCaseStudy() {
   const testimonials = [
     {
       authorName: "Ronald",
-		authorTitle: "Brigham Young University",
-		text: "Highly recommended. The problems went from easy to hard and towards the end It became a game for me to see if I could beat the score and achieve higher. I ended up with a 22 on PAT thanks to the great practice and techniques from Erudition PAT Prep.",
+      authorTitle: "Brigham Young University",
+      text: "Highly recommended. The problems went from easy to hard and towards the end It became a game for me to see if I could beat the score and achieve higher. I ended up with a 22 on PAT thanks to the great practice and techniques from Erudition PAT Prep.",
 
     },
     {
       authorName: "John",
-		authorTitle: "McMaster University",
-		text: "Your PAT videos were the absolute best by far. I was dying on the Keyhole problems and [other]’s videos were not helping. You actually did difficult examples in your videos and it helped me tremendously!",
+      authorTitle: "McMaster University",
+      text: "Your PAT videos were the absolute best by far. I was dying on the Keyhole problems and [other]’s videos were not helping. You actually did difficult examples in your videos and it helped me tremendously!",
 
     },
   ]
@@ -125,137 +132,37 @@ export default function PigtracksCaseStudy() {
         </Box>
       </Container>
 
-      {/* Overview Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8, overflowX: "hidden" }}>
-        <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-          <Grid container spacing={8}>
-            <Grid item size={{ xs: 12, md: 6 }}>
-              <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 4 }}>
-                Overview
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
-                PigTracks is a cloud-based field execution platform designed for the pipeline integrity industry, with a focus on pigging operations.
+      <CaseStudyOverview
+        image={{
+          src: "/cases/pigtracks/overview-cover.png",
+          alt: "Pigtracks explanations interface",
+          width: 500,
+          height: 600
+        }}
+      >
+        <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
+          PigTracks is a cloud-based field execution platform designed for the pipeline integrity industry, with a focus on pigging operations.
 
-Its core mission is to “support the world’s best pipeline integrity teams” by making the complex job of pigging and data management radically simpler and more transparent. The system turns raw field inputs into actionable intelligence so operators can run safer, more efficient, fully compliant pipeline programs.
-              </Typography>
+          Its core mission is to "support the world's best pipeline integrity teams" by making the complex job of pigging and data management radically simpler and more transparent. The system turns raw field inputs into actionable intelligence so operators can run safer, more efficient, fully compliant pipeline programs.
+        </Typography>
 
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
-                Challenges
-              </Typography>
+        <ChallengesList challenges={challenges} />
+      </CaseStudyOverview>
 
-              <Box sx={{ mb: 2, display: "flex", alignItems: "center" }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  01/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  Fragmented field data 
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  02/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  Raw complexity of field inputs
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  03/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  Manual workflows & compliance risks
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  04/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  No real‑time pig visibility
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  05/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  Disconnected team coordination
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 4 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  06/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  Scaling across large operations
-                </Typography>
-              </Box>
-            </Grid>
+      <SolutionsList
+        solutions={solutions}
+        subtitle="Track pigs in real-time, manage field data, and keep your whole team aligned while we handle the complexity so you can focus on safe, efficient pipeline operations."
+      />
 
-            <Grid item size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
-              <Box
-                sx={{
-                  // height: { xs: "auto", lg: "100%" },
-                  width: "100%",
-                  overflow: { lg: "visible" },
-                  display: "flex",
-                  alignItems: { lg: "center" },
-                  "& img": {
-                    height: { xs: "auto", lg: "100%" },
-                    width: { xs: "100%", md: "1000px" },
-                    objectFit: { lg: "contain" }
-                  }
-                }}
-              >
-                <Image
-                  src="/cases/pigtracks/overview-cover.png"
-                  alt="Pigtracks explanations interface"
-                  width={500}
-                  height={600}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
+      <Image
+        src="/cases/pigtracks/showcase.png"
+        alt="PigTracks interface showcase"
+        width={1440}
+        height={2122}
+        style={{ width: "100%", height: "auto" }}
+      />
 
-      {/* Solutions Section */}
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          <Grid item size={{ xs: 12, md: 6 }}>
-            <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
-              Solutions
-            </Typography>
-            <Typography variant="body1" sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}>
-              Track pigs in real-time, manage field data, and keep your whole team aligned while we handle the complexity so you can focus on safe, efficient pipeline operations.
-            </Typography>
-          </Grid>
-          <Grid item size={{ xs: 12, md: 6 }}>
-            {solutions.map((solution, index) => (
-              <>
-                <Box key={index} display="flex" gap={4}>
-                  <Box>
-                    <Typography variant="h4" sx={{ color: "#f8d7da", fontWeight: 600, mb: 1 }}>
-                      [{String(index + 1).padStart(2, "0")}]
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                      {solution.title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
-                      {solution.description}
-                    </Typography>
-                  </Box>
-                </Box>
-                {index !== solutions.length - 1 && <Divider sx={{ my: 2 }} />}
-              </>
-            ))}
-          </Grid>
-        </Grid>
-      </Container>
-{/* 
+      {/* 
       <Image
         src="/erudition-gallery.jpg"
         alt="Erudition interface"

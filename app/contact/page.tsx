@@ -42,7 +42,7 @@ export default function ContactPage() {
               mb: 6,
             }}
           >
-            Whether you have a groundbreaking project in mind, a question about our services, or just want to say hello,
+            Whether you have a groundbreaking project in mind, a question about our services, interest in joining our team, or just want to say hello,
             we're eager to hear from you.
           </Typography>
         </Container>

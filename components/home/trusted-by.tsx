@@ -54,7 +54,7 @@ export default function TrustedBy() {
       ...sx,
     }}
   >
-    Learn more
+    View more cases
   </Button>;
 
   return (

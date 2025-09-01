@@ -4,6 +4,9 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import Divider from "@mui/material/Divider"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 import EruditionTestimonials from "@/components/erudition/testimonials"
+import CaseStudyOverview from "@/components/cases/case-study-overview"
+import ChallengesList from "@/components/cases/challenges-list"
+import SolutionsList from "@/components/cases/solutions-list"
 
 export const metadata = {
   title: "Erudition | Case Study | Proga Tech",
@@ -11,6 +14,13 @@ export const metadata = {
 }
 
 export default function EruditionCaseStudy() {
+  const challenges = [
+    { text: "Rote memorization that doesn't stick" },
+    { text: "Boring study materials that put you to sleep" },
+    { text: "No real understanding of how concepts connect" },
+    { text: "One-dimensional learning that doesn't engage your brain fully" }
+  ]
+
   const solutions = [
     {
       title: "DAT perceptual ability",
@@ -61,7 +71,7 @@ export default function EruditionCaseStudy() {
       {/* Hero Section */}
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
         <Grid container spacing={6}>
-          <Grid item size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography
               variant="h2"
               component="h1"
@@ -117,126 +127,35 @@ export default function EruditionCaseStudy() {
       </Container>
 
       {/* Overview Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8, overflowX: "hidden" }}>
-        <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-          <Grid container spacing={8}>
-            <Grid item size={{ xs: 12, md: 6 }}>
-              <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 4 }}>
-                Overview
-              </Typography>
+      <CaseStudyOverview
+        image={{
+          src: "/cases/erudition/overview-cover.png",
+          alt: "Erudition explanations interface",
+          width: 500,
+          height: 600
+        }}
+      >
+        <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
+          Helping you make sense of things
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
+          We use proven learning principles to make exam prep less stressful and more effective. Whether you're
+          mastering GRE vocabulary or developing visual skills for the DAT, we're here to help you see how
+          everything connects.
+        </Typography>
 
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
-                Helping you make sense of things
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
-                We use proven learning principles to make exam prep less stressful and more effective. Whether you're
-                mastering GRE vocabulary or developing visual skills for the DAT, we're here to help you see how
-                everything connects.
-              </Typography>
+        <ChallengesList 
+          challenges={challenges}
+          variant="numbered"
+          title="Challenges"
+          introText="Traditional learning was limiting:"
+        />
+      </CaseStudyOverview>
 
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
-                Challenges
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 3, color: "#cccccc" }}>
-                Traditional learning was limiting:
-              </Typography>
-
-              <Box sx={{ mb: 2, display: "flex", alignItems: "center" }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  01/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  Rote memorization that doesn't stick
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  02/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  Boring study materials that put you to sleep
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  03/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  No real understanding of how concepts connect
-                </Typography>
-              </Box>
-              <Box sx={{ mb: 4 }}>
-                <Typography variant="body2" sx={{ color: "#666", fontSize: 24 }} display="inline">
-                  04/
-                </Typography>
-                <Typography variant="body1" sx={{ color: "#cccccc" }} display="inline" ml={1}>
-                  One-dimensional learning that doesn't engage your brain fully
-                </Typography>
-              </Box>
-            </Grid>
-
-            <Grid item size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
-              <Box
-                sx={{
-                  // height: { xs: "auto", lg: "100%" },
-                  width: "100%",
-                  overflow: { lg: "visible" },
-                  display: "flex",
-                  alignItems: { lg: "center" },
-                  "& img": {
-                    height: { xs: "auto", lg: "100%" },
-                    width: { xs: "100%", md: "1000px" },
-                    objectFit: { lg: "contain" }
-                  }
-                }}
-              >
-                <Image
-                  src="/cases/erudition/overview-cover.png"
-                  alt="Erudition explanations interface"
-                  width={500}
-                  height={600}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Solutions Section */}
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          <Grid item size={{ xs: 12, md: 6 }}>
-            <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
-              Solutions
-            </Typography>
-            <Typography variant="body1" sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}>
-              Master new skills the smart way. Personalized learning plans, progress tracking, and study tools that actually help you remember what you learn.
-            </Typography>
-          </Grid>
-          <Grid item size={{ xs: 12, md: 6 }}>
-            {solutions.map((solution, index) => (
-              <>
-                <Box key={index} display="flex" gap={4}>
-                  <Box>
-                    <Typography variant="h4" sx={{ color: "#f8d7da", fontWeight: 600, mb: 1 }}>
-                      [{String(index + 1).padStart(2, "0")}]
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                      {solution.title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.6 }}>
-                      {solution.description}
-                    </Typography>
-                  </Box>
-                </Box>
-                {index !== solutions.length - 1 && <Divider sx={{ my: 2 }} />}
-              </>
-            ))}
-          </Grid>
-        </Grid>
-      </Container>
+      <SolutionsList 
+        solutions={solutions}
+        subtitle="Master new skills the smart way. Personalized learning plans, progress tracking, and study tools that actually help you remember what you learn."
+      />
 
       <Image
         src="/cases/erudition/showcase.jpg"
