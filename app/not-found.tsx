@@ -1,16 +1,33 @@
 import Link from "next/link"
-// import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { Box, Button, Container, Typography } from "@mui/material"
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
-      <h1 className="text-6xl font-bold text-primary">404</h1>
-      <h2 className="text-3xl font-semibold mt-4">Page Not Found</h2>
-      <p className="mt-4 text-lg text-muted-foreground max-w-md">
-        Sorry, we couldn't find the page you're looking for. It might have been moved or doesn't exist.
-      </p>
-      <Image src="/assets/brovko-pet.png" alt="Brovko Pet" width={300} height={300} />
-    </div>
+    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
+      <Box display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"} gap={4} my={8}>
+        <Image src="/brovko-pet.png" alt="Brovko Pet" width={530} height={330} />
+        <Typography variant="h3" sx={{ color: "black" }}>This page took an unexpected coffee break</Typography>
+        <Typography variant="body1">We’ll get it back to you shortly. While you wait, grab something tasty for your pet </Typography>
+        <Box display={"flex"} gap={2} >
+          <Button
+            component={"a"}
+            href="https://brovko.pet/"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outlined"
+            sx={{ px: 5 }}
+          >
+            Shop
+          </Button>
+          <Button component={Link} href="/" variant="contained"
+            sx={{ px: 5 }}>
+            Home
+          </Button>
+        </Box>
+      </Box>
+    </Container>
+
   )
 }
