@@ -4,6 +4,7 @@ import AboutStats from "@/components/about/about-stats"
 import OurStory from "@/components/about/our-story"
 import InstagramSection from "@/components/about/instagram-section"
 import ValuesSection from "@/components/about/values-section"
+import TeamMembers from "@/components/about/team-members"
 
 export const metadata = {
   title: "About Us | Proga Tech",
@@ -27,6 +28,7 @@ export default function AboutPage() {
       <OurStory />
       <InstagramSection />
       <ValuesSection />
+      <TeamMembers />
     </Box>
   )
 }

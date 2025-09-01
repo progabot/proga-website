@@ -34,9 +34,22 @@ export default function ContactForm() {
     setIsSubmitting(true)
     setFormStatus("idle")
 
-    try{
+    try {
+      const response = await fetch("https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ba35d02f-0b7f-4e3e-b8f5-ef0e34bac51d/default/proga-website-form-submission-on-contact-us", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
       setFormStatus("success")
-      form.reset()
+      // Reset form after successful submission
+      // form.reset()
     } catch (error) {
       console.error("Form submission error:", error)
       setFormStatus("error")
@@ -59,24 +72,12 @@ export default function ContactForm() {
         Get in touch
       </Typography>
 
-      {formStatus === "success" && (
-        <Alert severity="success" icon={<CheckCircle2 />} sx={{ mb: 3, backgroundColor: "rgba(76, 175, 80, 0.1)" }}>
-          Thank you for your message! We'll get back to you as soon as possible.
-        </Alert>
-      )}
-
-      {formStatus === "error" && (
-        <Alert severity="error" icon={<AlertCircle />} sx={{ mb: 3, backgroundColor: "rgba(244, 67, 54, 0.1)" }}>
-          There was an error submitting your message. Please try again later.
-        </Alert>
-      )}
-
       <Box
         component="form"
         onSubmit={form.handleSubmit(onSubmit)}
-        sx={{ display: "flex", flexDirection: "column", gap: 3 }}
+        sx={{ display: "flex", flexDirection: "column", gap: 1 }}
       >
-        <Box>
+        <Box minHeight={"115px"}>
           <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
             Full name
           </Typography>
@@ -96,11 +97,16 @@ export default function ContactForm() {
                 "&.Mui-focused fieldset": { borderColor: "#999" },
               },
               "& .MuiInputBase-input::placeholder": { color: "#aaa" },
+              "& .MuiFormHelperText-root": {
+                color: "#FF515A !important",
+                marginTop: "8px",
+                marginLeft: "0",
+              },
             }}
           />
         </Box>
 
-        <Box>
+        <Box minHeight={"115px"}>
           <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
             Email
           </Typography>
@@ -121,11 +127,16 @@ export default function ContactForm() {
                 "&.Mui-focused fieldset": { borderColor: "#999" },
               },
               "& .MuiInputBase-input::placeholder": { color: "#aaa" },
+              "& .MuiFormHelperText-root": {
+                color: "#FF515A !important",
+                marginTop: "8px",
+                marginLeft: "0",
+              },
             }}
           />
         </Box>
 
-        <Box>
+        <Box minHeight={"115px"}>
           <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
             Subject
           </Typography>
@@ -145,6 +156,11 @@ export default function ContactForm() {
                 "&.Mui-focused fieldset": { borderColor: "#999" },
               },
               "& .MuiInputBase-input::placeholder": { color: "#aaa" },
+              "& .MuiFormHelperText-root": {
+                color: "#FF515A !important",
+                marginTop: "8px",
+                marginLeft: "0",
+              },
             }}
           />
         </Box>
@@ -171,6 +187,11 @@ export default function ContactForm() {
                 "&.Mui-focused fieldset": { borderColor: "#999" },
               },
               "& .MuiInputBase-input::placeholder": { color: "#aaa" },
+              "& .MuiFormHelperText-root": {
+                color: "#FF515A !important",
+                marginTop: "8px",
+                marginLeft: "0",
+              },
             }}
           />
         </Box>
@@ -178,8 +199,9 @@ export default function ContactForm() {
         <Button
           type="submit"
           variant="contained"
-          disabled={isSubmitting}
+          disabled={isSubmitting || formStatus === "success"}
           sx={{
+            mt: 4,
             backgroundColor: "white",
             color: "black",
             fontWeight: "bold",
@@ -190,6 +212,18 @@ export default function ContactForm() {
         >
           {isSubmitting ? "Sending..." : "Send"}
         </Button>
+
+
+      {formStatus === "error" && (
+        <Alert severity="error" icon={<AlertCircle />} sx={{ mt: 2, backgroundColor: "rgba(244, 67, 54, 0.1)", color: "white" }}>
+          There was an error submitting your message. Please try again later.
+        </Alert>
+      )}
+      {formStatus === "success" && (
+        <Alert severity="success" icon={<CheckCircle2 />} sx={{ mt: 2, backgroundColor: "rgba(76, 175, 80, 0.1)", color: "white" }}>
+          Thank you for your message! We'll get back to you as soon as possible.
+        </Alert>
+      )}
       </Box>
     </Box>
   )

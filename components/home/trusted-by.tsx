@@ -10,16 +10,16 @@ const caseStudies = [
   {
     id: "pigtracks",
     name: "PigTracks",
-    logo: "/pigtracks-logo.svg", // Added logo for each case study
-    image: "/pigtracks-dashboard-mockup.png", // Updated to use new mockup images
-    tags: ["Cloud Platform", "Pipeline Integrity", "Data Management"], // Updated tags to match screenshot
+    logo: "/pigtracks-logo.svg",
+    image: "/cases/pigtracks/cover-image-short.png",
+    tags: ["Cloud Platform", "Pipeline Integrity", "Data Management"],
     link: "/cases/pigtracks",
   },
   {
     id: "stridist",
     name: "Stridist",
     logo: "/stridist-logo.svg",
-    image: "/stridist-app-mockup.png",
+    image: "/cases/stridist/cover-image-short.png",
     tags: ["Healthcare", "Fitness", "Coaching"],
     link: "/cases/stridist",
   },
@@ -27,8 +27,8 @@ const caseStudies = [
     id: "erudition",
     name: "Erudition",
     logo: "/erudition-logo.svg",
-    image: "/erudition-platform-mockup.png",
-    tags: ["Education", "E-learning"], // Updated tags to match screenshot
+    image: "/cases/erudition/cover-image-short.png",
+    tags: ["Education", "E-learning"],
     link: "/cases/erudition",
   },
 ]

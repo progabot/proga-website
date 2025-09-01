@@ -51,11 +51,11 @@ export default function ContactPage() {
       <Box component="section" sx={{ pb: 8 }}>
         <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
           <Grid container spacing={2}>
-            {/* <Grid size={{xs:12,lg:6}}>
+            <Grid size={{xs:12,lg:6}}>
               <Suspense fallback={<LoadingSpinner />}>
                 <ContactForm />
               </Suspense>
-            </Grid> */}
+            </Grid>
 
             <Grid size={{xs:12,lg:6}}>
               <Suspense fallback={<LoadingSpinner />}>

@@ -7,20 +7,19 @@ export default function OurStory() {
     <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
       <Grid container spacing={6} alignItems="center">
         {/* Photo collage */}
-        <Grid size={{xs:12,md:6}}>
-
+        <Grid size={{ xs: 12, md: 6 }}>
           <Image
-                        src={"/team.jpg"}
-                        alt={`PGT Instagram`}
-                        width={762}
-                        height={813}
-                        style={{ width: "100%", height: "auto" }}
-                      />
+            src={"/team.jpg"}
+            alt={`PGT Instagram`}
+            width={762}
+            height={813}
+            style={{ width: "100%", height: "auto" }}
+          />
 
         </Grid>
 
         {/* Story content */}
-        <Grid size={{xs:12,md:6}}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography
             variant="h3"
             sx={{

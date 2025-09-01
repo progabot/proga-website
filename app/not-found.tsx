@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function NotFound() {
   return (
@@ -9,11 +10,7 @@ export default function NotFound() {
       <p className="mt-4 text-lg text-muted-foreground max-w-md">
         Sorry, we couldn't find the page you're looking for. It might have been moved or doesn't exist.
       </p>
-      <div className="mt-8">
-        <Button asChild>
-          <Link href="/">Return Home</Link>
-        </Button>
-      </div>
+      <Image src="/assets/brovko-pet.png" alt="Brovko Pet" width={300} height={300} />
     </div>
   )
 }

@@ -23,7 +23,7 @@ export default function ContactInfo() {
         </Box>
       </Box>
 
-      <Box border={1} borderRadius={4} p={5} borderColor={"#DFDFDF"} height={"100%"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"} alignItems={"flex-start"}>
+      <Box border={1} borderRadius={4} p={5} borderColor={"#DFDFDF"} display={"flex"} flexDirection={"column"} justifyContent={"space-between"} alignItems={"flex-start"}>
         <Box>
           <Typography variant="h4" sx={{ fontWeight: "bold", mb: 3, color: "#1A1A1A" }}>
             Visit us

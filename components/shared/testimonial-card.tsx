@@ -133,6 +133,7 @@ export default function TestimonialCard({ testimonial, light = false }: { testim
                   >
                     <Image src={"/icons/clutch.png"} alt={`Clutch`} width={24} height={24} style={{ marginRight: "10px" }} />
                     Read on Clutch
+                    {/* todo: update icon */}
                   </Button>
                 )}
               </Stack>

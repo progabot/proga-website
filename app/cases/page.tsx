@@ -31,7 +31,7 @@ export default function CasesPage() {
             title="Stridist"
             description="Built for fitness trainers who want to focus on what they love - training people. We handle the scheduling, client management, and business stuff so you can concentrate on changing lives."
             tags={["Healthcare", "Fitness", "Coaching"]}
-            mockupImage="/stridist-mockup.png"
+            mockupImage="/cases/stridist/cover-image.png"
             mockupAlt="Stridist mobile app mockups showing trainer scheduling and client management"
             href="/cases/stridist"
           />
@@ -41,7 +41,7 @@ export default function CasesPage() {
             title="Erudition"
             description="Learning shouldn't be complicated. We're creating a space where teachers can easily build engaging courses and students actually enjoy the learning process."
             tags={["Education", "E-learning"]}
-            mockupImage="/erudition-mockup.png"
+            mockupImage="/cases/erudition/cover-image.png"
             mockupAlt="Erudition desktop platform showing course creation interface"
             href="/cases/erudition"
             reverse
@@ -52,7 +52,7 @@ export default function CasesPage() {
             title="PigTracks"
             description="Real-time pipeline monitoring made simple. Track your equipment, get instant alerts when something's wrong, and keep everything running smoothly with live maps and smart automation."
             tags={["Cloud Platform", "Pipeline Integrity", "Data Management"]}
-            mockupImage="/pigtracks-mockup.png"
+            mockupImage="/cases/pigtracks/cover-image.png"
             mockupAlt="PigTracks dashboard showing pipeline monitoring on multiple devices"
             href="/cases/pigtracks"
           />

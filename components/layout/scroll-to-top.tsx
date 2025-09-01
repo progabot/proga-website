@@ -7,12 +7,7 @@ export default function ScrollToTop() {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Scroll to top when pathname changes
-    console.log("Pathname changed, scrolling to top:", pathname)
-    setTimeout(() => {
-        console.log("Executing scroll to top now.")
-      window.scrollTo(0, 0)
-    }, 1000);
+    window.scrollTo({ top: 0 })
   }, [pathname])
 
   return null

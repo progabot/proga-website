@@ -116,7 +116,7 @@ export default function PigtracksCaseStudy() {
         </Grid>
         <Box>
           <Image
-            src="/pigtracks-hero-mockup.png"
+            src="/cases/pigtracks/hero-image.png"
             alt="PigTracks application interface"
             width={1320}
             height={530}
@@ -126,7 +126,7 @@ export default function PigtracksCaseStudy() {
       </Container>
 
       {/* Overview Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
+      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8, overflowX: "hidden" }}>
         <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
           <Grid container spacing={8}>
             <Grid item size={{ xs: 12, md: 6 }}>
@@ -209,7 +209,7 @@ Its core mission is to “support the world’s best pipeline integrity teams”
                 }}
               >
                 <Image
-                  src="/pigtracks-explanations-mockup.png"
+                  src="/cases/pigtracks/overview-cover.png"
                   alt="Pigtracks explanations interface"
                   width={500}
                   height={600}

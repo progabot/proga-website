@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {
@@ -16,9 +16,8 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  useTheme,
 } from "@mui/material"
-import { Menu, Close, NorthEast, East } from "@mui/icons-material"
+import { Menu, Close, East } from "@mui/icons-material"
 import Image from "next/image"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
@@ -32,25 +31,7 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
   const pathname = usePathname()
-  const theme = useTheme()
-
-  useEffect(() => {
-    setMounted(true)
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < theme.breakpoints.values.lg)
-    }
-
-    checkIsMobile()
-    window.addEventListener("resize", checkIsMobile)
-
-    return () => window.removeEventListener("resize", checkIsMobile)
-  }, [theme.breakpoints.values.lg])
-
-  const showMobileMenu = mounted && isMobile
-  const showDesktopMenu = mounted && !isMobile
 
   return (
     <AppBar
@@ -62,7 +43,7 @@ export default function Header() {
         borderBottom: "none",
       }}
     >
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} px={0}>
+      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <Toolbar disableGutters sx={{ justifyContent: "space-between", py: 3, px: 0 }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
             <Image
@@ -74,68 +55,66 @@ export default function Header() {
             />
           </Link>
 
-          {(showDesktopMenu || !mounted) && (
-            <Box sx={{ display: "flex", gap: 4, position: "absolute", left: '50%;', top: '50%', transform: "translate(-50%, -50%)" }}>
-              {navigation.map((item) => (
-                <Link key={item.name} href={item.href} style={{ textDecoration: "none" }}>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontWeight: 500,
-                      color: pathname === item.href ? "#000" : "#666",
-                      position: "relative",
-                      transition: "color 0.2s ease",
-                      "&:hover": {
-                        color: "#000",
-                      },
-                      "&::after":
-                        pathname === item.href
-                          ? {
-                            content: '""',
-                            position: "absolute",
-                            bottom: -4,
-                            left: 0,
-                            right: 0,
-                            height: 2,
-                            backgroundColor: "#f8bbd9",
-                          }
-                          : {},
-                    }}
-                  >
-                    {item.name}
-                  </Typography>
-                </Link>
-              ))}
-            </Box>
-          )}
+          <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 4, position: "absolute", left: '50%;', top: '50%', transform: "translate(-50%, -50%)" }}>
+            {navigation.map((item) => (
+              <Link key={item.name} scroll={false} href={item.href} style={{ textDecoration: "none" }}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontWeight: 500,
+                    color: pathname === item.href ? "#000" : "#666",
+                    position: "relative",
+                    transition: "color 0.2s ease",
+                    "&:hover": {
+                      color: "#000",
+                    },
+                    "&::after":
+                      pathname === item.href
+                        ? {
+                          content: '""',
+                          position: "absolute",
+                          bottom: -4,
+                          left: 0,
+                          right: 0,
+                          height: 2,
+                          backgroundColor: "#f8bbd9",
+                        }
+                        : {},
+                  }}
+                >
+                  {item.name}
+                </Typography>
+              </Link>
+            ))}
+          </Box>
 
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            {(showDesktopMenu || !mounted) && (
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  borderRadius: 2,
-                  px: 3,
-                  py: 1,
-                  "&:hover": {
-                    backgroundColor: "#333",
-                  },
-                }}
-                endIcon={<East />}
-                component={Link}
-                href="/contact"
-              >
-                Contact us
-              </Button>
-            )}
+            <Button
+              variant="contained"
+              sx={{
+                display: { xs: "none", lg: "flex" },
+                backgroundColor: "#000",
+                color: "#fff",
+                borderRadius: 2,
+                px: 3,
+                py: 1,
+                "&:hover": {
+                  backgroundColor: "#333",
+                },
+              }}
+              endIcon={<East />}
+              component={Link}
+              href="/contact"
+            >
+              Contact us
+            </Button>
 
-            {showMobileMenu && (
-              <IconButton onClick={() => setMobileMenuOpen(true)} sx={{ color: "#666" }}>
-                <Menu />
-              </IconButton>
-            )}
+            <IconButton onClick={() => setMobileMenuOpen(true)} sx={{
+              color: "#666",
+              display: { xs: "block", lg: "none" },
+            }}>
+              <Menu />
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
@@ -153,11 +132,11 @@ export default function Header() {
       >
         <Box p={3}>
           <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 3 }}>
-            <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            <Link onClick={() => setMobileMenuOpen(false)} href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
               <Image
-                src="/progatech-logo.png"
+                src="/proga-longlogo.png"
                 alt="ProgaTech"
-                width={140}
+                width={220}
                 height={32}
                 style={{ objectFit: "contain" }}
               />

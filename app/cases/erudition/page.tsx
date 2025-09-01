@@ -107,7 +107,7 @@ export default function EruditionCaseStudy() {
         </Grid>
         <Box>
           <Image
-            src="/erudition-hero-mockup.png"
+            src="/cases/erudition/hero-image.png"
             alt="Erudition application interface"
             width={1320}
             height={530}
@@ -117,7 +117,7 @@ export default function EruditionCaseStudy() {
       </Container>
 
       {/* Overview Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
+      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8, overflowX: "hidden" }}>
         <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
           <Grid container spacing={8}>
             <Grid item size={{ xs: 12, md: 6 }}>
@@ -191,7 +191,7 @@ export default function EruditionCaseStudy() {
                 }}
               >
                 <Image
-                  src="/erudition-explanations-mockup.png"
+                  src="/cases/erudition/overview-cover.png"
                   alt="Erudition explanations interface"
                   width={500}
                   height={600}
@@ -239,8 +239,8 @@ export default function EruditionCaseStudy() {
       </Container>
 
       <Image
-        src="/erudition-gallery.jpg"
-        alt="Erudition interface"
+        src="/cases/erudition/showcase.jpg"
+        alt="Erudition interface showcase"
         width={1440}
         height={1980}
         style={{ width: "100%", height: "auto" }}
@@ -273,7 +273,7 @@ export default function EruditionCaseStudy() {
                     alignItems="baseline"
                   >
                     <Box>
-                      <Image src="/erudition-dat-logo.png" alt="Erudition Dat" width={180} height={36} />
+                      <Image src="/cases/erudition/dat-logo.png" alt="Erudition Dat" width={180} height={36} />
                       <Typography variant="body1" sx={{ mb: 4, mt: 2, color: "#cccccc" }}>
                         Get a fun training task in your inbox every week (no course registration required).
                       </Typography>
@@ -301,7 +301,7 @@ export default function EruditionCaseStudy() {
                     flexDirection="column"
                     alignItems="baseline">
                     <Image
-                      src="/erudition-dat.png"
+                      src="/cases/erudition/dat-preview.png"
                       alt="Erudition DAT mobile app"
                       width={472}
                       height={628}
@@ -324,7 +324,7 @@ export default function EruditionCaseStudy() {
                     alignItems="baseline"
                   >
                     <Box>
-                      <Image src="/erudition-vocab-logo.png" alt="Erudition Vocab" width={180} height={36} />
+                      <Image src="/cases/erudition/vocab-logo.png" alt="Erudition Vocab" width={180} height={36} />
                       <Typography variant="body1" sx={{ mb: 4, mt: 2, color: "#cccccc" }}>
                         Learn advanced vocabulary with clever illustrations, word origins, and memorable associations.
                       </Typography>
@@ -352,7 +352,7 @@ export default function EruditionCaseStudy() {
                     flexDirection="column"
                     alignItems="baseline">
                     <Image
-                      src="/erudition-vocab.png"
+                      src="/cases/erudition/vocab-preview.png"
                       alt="Erudition DAT mobile app"
                       width={472}
                       height={628}

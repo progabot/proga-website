@@ -109,8 +109,8 @@ export default function StridistCaseStudy() {
         </Grid>
         <Box>
           <Image
-            src="/stridist-hero-mockup.png"
-            alt="Erudition application interface"
+            src="/cases/stridist/hero-image.png"
+            alt="Stridist application interface"
             width={1320}
             height={530}
             style={{ width: "100%", height: "auto" }}
@@ -119,7 +119,7 @@ export default function StridistCaseStudy() {
       </Container>
 
       {/* Overview Section */}
-      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
+      <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8, overflowX: "hidden" }}>
         <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
           <Grid container spacing={8}>
             <Grid item size={{ xs: 12, md: 6 }}>
@@ -155,7 +155,7 @@ export default function StridistCaseStudy() {
                 }}
               >
                 <Image
-                  src="/stridist-explanations-mockup.png"
+                  src="/cases/stridist/overview-cover.png"
                   alt="Stridist explanations interface"
                   width={500}
                   height={600}
@@ -203,7 +203,7 @@ export default function StridistCaseStudy() {
       </Container>
 
       <Image
-        src="/stridist-gallery.png"
+        src="/cases/stridist/showcase.png"
         alt="Stridist interface"
         width={1440}
         height={650}
