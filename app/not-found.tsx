@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
       <Box display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"} gap={4} my={8}>
-        <Image src="/brovko-pet.png" alt="Brovko Pet" width={530} height={330} />
+        <Image src="/brovko-pet.png" alt="Brovko Pet" width={530} height={330} style={{ maxWidth: "100%", height: "auto" }} />
         <Typography variant="h3" sx={{ color: "black" }}>This page took an unexpected coffee break</Typography>
         <Typography variant="body1">We’ll get it back to you shortly. While you wait, grab something tasty for your pet </Typography>
         <Box display={"flex"} gap={2} >
