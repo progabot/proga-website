@@ -15,6 +15,7 @@ import CaseStudyOverview from "@/components/cases/case-study-overview";
 import ChallengesList from "@/components/cases/challenges-list";
 import SolutionsList from "@/components/cases/solutions-list";
 import CaseStudyHero from "@/components/cases/case-study-hero";
+import ProjectShowCase from "@/components/cases/project-showcase";
 
 export const metadata = {
   title: "Erudition | Case Study | Proga Tech",
@@ -78,7 +79,6 @@ const TESTIMONIALS = [
 export default function EruditionCaseStudy() {
   return (
     <Box>
-      {/* Hero Section */}
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <CaseStudyHero
           title="Erudition"
@@ -91,7 +91,6 @@ export default function EruditionCaseStudy() {
         />
       </Container>
 
-      {/* Overview Section */}
       <CaseStudyOverview
         image={{
           src: "/cases/erudition/overview-cover.png",
@@ -125,19 +124,14 @@ export default function EruditionCaseStudy() {
         subtitle="Master new skills the smart way. Personalized learning plans, progress tracking, and study tools that actually help you remember what you learn."
       />
 
-      <Box
-        display={"flex"}
-        justifyContent="center"
-        sx={{ backgroundColor: "#1a1a1a" }}
-      >
-        <Image
-          src="/cases/erudition/showcase.jpg"
-          alt="Erudition interface showcase"
-          width={1440}
-          height={1980}
-          style={{ width: "100%", maxWidth: "1600px", height: "auto" }}
-        />
-      </Box>
+      <ProjectShowCase
+        image={{
+          src: "/cases/erudition/showcase.jpg",
+          width: 1440,
+          height: 1980,
+        }}
+        imageAlt="Erudition interface showcase"
+      />
 
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
         <CustomerTestimonials testimonials={TESTIMONIALS} />
