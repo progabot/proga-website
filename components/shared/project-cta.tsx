@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Box, Container, Typography, Button } from "@mui/material"
-import { East, NorthEast } from "@mui/icons-material"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import Link from "next/link"
+import { Box, Container, Typography, Button } from "@mui/material";
+import { East, NorthEast } from "@mui/icons-material";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import Link from "next/link";
 
 export default function ProjectCTA() {
   return (
@@ -65,5 +65,5 @@ export default function ProjectCTA() {
         </Box>
       </Container>
     </Box>
-  )
+  );
 }

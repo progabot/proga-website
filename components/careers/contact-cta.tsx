@@ -1,11 +1,14 @@
-import { Container, Typography, Box, Button } from "@mui/material"
-import { East, NorthEast } from "@mui/icons-material"
-import Link from "next/link"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import { Container, Typography, Box, Button } from "@mui/material";
+import { East, NorthEast } from "@mui/icons-material";
+import Link from "next/link";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 export default function ContactCTA() {
   return (
-    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: { xs: 6, md: 10 } }}>
+    <Container
+      maxWidth={PAGE_CONTAINER_MAX_WIDTH}
+      sx={{ py: { xs: 6, md: 10 } }}
+    >
       <Box
         sx={{
           backgroundColor: "#f8bbd9",
@@ -34,7 +37,8 @@ export default function ContactCTA() {
             maxWidth: "600px",
           }}
         >
-          We'd still love to hear from you. Reach out to us directly and let's talk.
+          We'd still love to hear from you. Reach out to us directly and let's
+          talk.
         </Typography>
         <Button
           variant="contained"
@@ -58,5 +62,5 @@ export default function ContactCTA() {
         </Button>
       </Box>
     </Container>
-  )
+  );
 }

@@ -1,16 +1,17 @@
-import { Box } from "@mui/material"
-import AboutHero from "@/components/about/about-hero"
-import AboutStats from "@/components/about/about-stats"
-import OurStory from "@/components/about/our-story"
-import InstagramSection from "@/components/about/instagram-section"
-import ValuesSection from "@/components/about/values-section"
-import TeamMembers from "@/components/about/team-members"
-import InspiringMomentsSection from "@/components/about/inspiring-moments-section"
+import { Box } from "@mui/material";
+import AboutHero from "@/components/about/about-hero";
+import AboutStats from "@/components/about/about-stats";
+import OurStory from "@/components/about/our-story";
+import InstagramSection from "@/components/about/instagram-section";
+import ValuesSection from "@/components/about/values-section";
+import TeamMembers from "@/components/about/team-members";
+import InspiringMomentsSection from "@/components/about/inspiring-moments-section";
 
 export const metadata = {
   title: "About Us | Proga Tech",
-  description: "Meet Proga Tech team. Experienced developers and designers creating digital solutions. Our story, values, and expertise.",
-}
+  description:
+    "Meet Proga Tech team. Experienced developers and designers creating digital solutions. Our story, values, and expertise.",
+};
 
 export default function AboutPage() {
   return (
@@ -32,5 +33,5 @@ export default function AboutPage() {
       <TeamMembers />
       <InspiringMomentsSection />
     </Box>
-  )
+  );
 }

@@ -1,14 +1,27 @@
-"use client"
+"use client";
 
-import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material"
-import { Sprout, HeartHandshake, MessageCircleHeart, CodeXml } from "lucide-react"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+} from "@mui/material";
+import {
+  Sprout,
+  HeartHandshake,
+  MessageCircleHeart,
+  CodeXml,
+} from "lucide-react";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 const missionItems = [
   {
     icon: CodeXml,
     title: "Build meaningful tech",
-    description: "Creating user-friendly digital products that solve real problems and make a positive impact",
+    description:
+      "Creating user-friendly digital products that solve real problems and make a positive impact",
   },
   {
     icon: Sprout,
@@ -18,14 +31,16 @@ const missionItems = [
   {
     icon: HeartHandshake,
     title: "Support Ukraine",
-    description: "We contribute to victory with regular donations and purposeful projects",
+    description:
+      "We contribute to victory with regular donations and purposeful projects",
   },
   {
     icon: MessageCircleHeart,
     title: "Lead with heart and resilience",
-    description: "Born in hard times, we carry creativity, care, and strength into everything we do",
+    description:
+      "Born in hard times, we carry creativity, care, and strength into everything we do",
   },
-]
+];
 
 export default function Mission() {
   return (
@@ -45,7 +60,7 @@ export default function Mission() {
 
         <Grid container spacing={2}>
           {missionItems.map((item, index) => {
-            const IconComponent = item.icon
+            const IconComponent = item.icon;
             return (
               <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
                 <Card
@@ -61,10 +76,7 @@ export default function Mission() {
                 >
                   <CardContent sx={{ p: 3, pb: 0 }}>
                     <Box sx={{ mb: 2 }}>
-                      <IconComponent
-                        fontSize="24px"
-                        color="#E498B7"
-                      />
+                      <IconComponent fontSize="24px" color="#E498B7" />
                     </Box>
                     <Typography
                       variant="h6"
@@ -90,10 +102,10 @@ export default function Mission() {
                   </CardContent>
                 </Card>
               </Grid>
-            )
+            );
           })}
         </Grid>
       </Container>
     </Box>
-  )
+  );
 }

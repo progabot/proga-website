@@ -1,10 +1,22 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Box, Container, Typography, Button, Grid, Card, CardContent, Chip, Stack, ButtonProps, SxProps } from "@mui/material"
-import { East, NorthEast } from "@mui/icons-material"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Box,
+  Container,
+  Typography,
+  Button,
+  Grid,
+  Card,
+  CardContent,
+  Chip,
+  Stack,
+  ButtonProps,
+  SxProps,
+} from "@mui/material";
+import { East, NorthEast } from "@mui/icons-material";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 const caseStudies = [
   {
@@ -31,46 +43,74 @@ const caseStudies = [
     tags: ["Education", "E-learning"],
     link: "/cases/erudition",
   },
-]
+];
 
 export default function TrustedBy() {
-  const LearnMoreButton = ({sx}: {sx: SxProps}) => <Button
-    component={Link}
-    href="/cases"
-    variant="outlined"
-    sx={{
-      borderColor: "#000",
-      color: "#000",
-      borderRadius: 2,
-      px: 3,
-      py: 1,
-      textTransform: "none",
-      fontWeight: 500,
-      "&:hover": {
-        backgroundColor: "#f9f9f9",
+  const LearnMoreButton = ({ sx }: { sx: SxProps }) => (
+    <Button
+      component={Link}
+      href="/cases"
+      variant="outlined"
+      sx={{
         borderColor: "#000",
-      },
-      textAlign: "center",
-      ...sx,
-    }}
-  >
-    View more cases
-  </Button>;
+        color: "#000",
+        borderRadius: 2,
+        px: 3,
+        py: 1,
+        textTransform: "none",
+        fontWeight: 500,
+        "&:hover": {
+          backgroundColor: "#f9f9f9",
+          borderColor: "#000",
+        },
+        textAlign: "center",
+        ...sx,
+      }}
+    >
+      View more cases
+    </Button>
+  );
 
   return (
-    <Box component="section" sx={{ pb: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
+    <Box
+      component="section"
+      sx={{ pb: { xs: 8, md: 12 }, backgroundColor: "#fff" }}
+    >
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 6 }}>
-          <Typography variant="h2" sx={{ fontSize: { xs: "1.75rem", md: "2rem" }, fontWeight: 600, color: "#000" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 6,
+          }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "1.75rem", md: "2rem" },
+              fontWeight: 600,
+              color: "#000",
+            }}
+          >
             We are trusted by
           </Typography>
           <LearnMoreButton sx={{ display: { xs: "none", md: "block" } }} />
         </Box>
 
-        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" }, gap: 3 }}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+            gap: 3,
+          }}
+        >
           {caseStudies.map((study) => (
             <Box key={study.id}>
-              <Link href={study.link} style={{ textDecoration: "none", color: "inherit" }}>
+              <Link
+                href={study.link}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
                 <Card
                   sx={{
                     boxShadow: "none",
@@ -119,11 +159,23 @@ export default function TrustedBy() {
                   </Box>
 
                   <CardContent sx={{ px: 0, py: 3, pt: 0 }}>
-                    <Typography variant="h5" sx={{ fontSize: "1.25rem", fontWeight: 600, mb: 2, color: "#000" }}>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontSize: "1.25rem",
+                        fontWeight: 600,
+                        mb: 2,
+                        color: "#000",
+                      }}
+                    >
                       {study.name}
                     </Typography>
 
-                    <Stack direction="row" spacing={0.25} sx={{ flexWrap: "wrap", gap: 1, mb: 3 }}>
+                    <Stack
+                      direction="row"
+                      spacing={0.25}
+                      sx={{ flexWrap: "wrap", gap: 1, mb: 3 }}
+                    >
                       {study.tags.map((tag) => (
                         <Chip
                           key={tag}
@@ -139,7 +191,10 @@ export default function TrustedBy() {
                       ))}
                     </Stack>
 
-                    <Box className="case-study-link" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <Box
+                      className="case-study-link"
+                      sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                    >
                       <Typography
                         variant="body2"
                         className="case-study-text"
@@ -151,21 +206,23 @@ export default function TrustedBy() {
                       >
                         See full case study
                       </Typography>
-                      <East sx={{
-                        fontSize: 16,
-                        color: "#000",
-                        transition: "transform 0.2s ease",
-                      }} />
+                      <East
+                        sx={{
+                          fontSize: 16,
+                          color: "#000",
+                          transition: "transform 0.2s ease",
+                        }}
+                      />
                     </Box>
                   </CardContent>
                 </Card>
               </Link>
             </Box>
           ))}
-          
+
           <LearnMoreButton sx={{ display: { xs: "block", md: "none" } }} />
         </Box>
       </Container>
     </Box>
-  )
+  );
 }

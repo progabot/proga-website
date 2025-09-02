@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
 const Shell = styled(Box, {
-  shouldForwardProp: (prop) => prop !== 'light',
+  shouldForwardProp: (prop) => prop !== "light",
 })<{ light?: boolean }>(({ theme, light }) => ({
   height: "100%",
   position: "relative",
@@ -50,7 +50,7 @@ const Shell = styled(Box, {
 }));
 
 const Card = styled(Box, {
-  shouldForwardProp: (prop) => prop !== 'light',
+  shouldForwardProp: (prop) => prop !== "light",
 })<{ light?: boolean }>(({ theme, light }) => ({
   height: "100%",
   position: "relative",
@@ -65,13 +65,14 @@ interface ProgaShapedBoxProps {
   light?: boolean;
 }
 
-export default function ProgaShapedBox({ children, light = false }: ProgaShapedBoxProps) {
+export default function ProgaShapedBox({
+  children,
+  light = false,
+}: ProgaShapedBoxProps) {
   return (
     <Box paddingX={"1px"} height={"100%"}>
       <Shell light={light}>
-        <Card light={light}>
-          {children}
-        </Card>
+        <Card light={light}>{children}</Card>
       </Shell>
     </Box>
   );

@@ -1,13 +1,23 @@
-"use client"
+"use client";
 
-import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material"
-import { Computer, Smartphone, CreditCard } from "@mui/icons-material"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import { SERVICES } from "@/utils/services"
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+} from "@mui/material";
+import { Computer, Smartphone, CreditCard } from "@mui/icons-material";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import { SERVICES } from "@/utils/services";
 
 export default function ServicesHero() {
   return (
-    <Box component="section" sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
+    <Box
+      component="section"
+      sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}
+    >
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <Box sx={{ mb: 8 }}>
           <Typography
@@ -53,16 +63,18 @@ export default function ServicesHero() {
                 }}
               >
                 <CardContent sx={{ p: 0 }}>
-                  <Box sx={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: 56,
-                    height: 56,
-                    borderRadius: "50%",
-                    mb: 5,
-                    backgroundColor: "#F7F7F7"
-                  }}>
+                  <Box
+                    sx={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: 56,
+                      height: 56,
+                      borderRadius: "50%",
+                      mb: 5,
+                      backgroundColor: "#F7F7F7",
+                    }}
+                  >
                     {<service.icon color="#E498B7" size="2rem" />}
                   </Box>
                   <Typography
@@ -83,5 +95,5 @@ export default function ServicesHero() {
         </Grid>
       </Container>
     </Box>
-  )
+  );
 }

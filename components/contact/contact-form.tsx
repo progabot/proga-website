@@ -1,24 +1,30 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import { Box, Typography, TextField, Button, Alert } from "@mui/material"
-import { CheckCircle2, AlertCircle } from "lucide-react"
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Box, Typography, TextField, Button, Alert } from "@mui/material";
+import { CheckCircle2, AlertCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-})
+  subject: z
+    .string()
+    .min(5, { message: "Subject must be at least 5 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." }),
+});
 
-type FormValues = z.infer<typeof formSchema>
+type FormValues = z.infer<typeof formSchema>;
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle")
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">(
+    "idle",
+  );
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -28,21 +34,21 @@ export default function ContactForm() {
       subject: "",
       message: "",
     },
-  })
+  });
 
   const onSubmit = async (data: FormValues) => {
-    setIsSubmitting(true)
-    setFormStatus("idle")
+    setIsSubmitting(true);
+    setFormStatus("idle");
 
-    try{
-      setFormStatus("success")
+    try {
+      setFormStatus("success");
     } catch (error) {
-      console.error("Form submission error:", error)
-      setFormStatus("error")
+      console.error("Form submission error:", error);
+      setFormStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <Box
@@ -54,7 +60,10 @@ export default function ContactForm() {
         height: "fit-content",
       }}
     >
-      <Typography variant="h4" sx={{ fontWeight: "bold", mb: 4, color: "white" }}>
+      <Typography
+        variant="h4"
+        sx={{ fontWeight: "bold", mb: 4, color: "white" }}
+      >
         Get in touch
       </Typography>
 
@@ -199,18 +208,34 @@ export default function ContactForm() {
           {isSubmitting ? "Sending..." : "Send"}
         </Button>
 
-
-      {formStatus === "error" && (
-        <Alert severity="error" icon={<AlertCircle />} sx={{ mt: 2, backgroundColor: "rgba(244, 67, 54, 0.1)", color: "white" }}>
-          There was an error submitting your message. Please try again later.
-        </Alert>
-      )}
-      {formStatus === "success" && (
-        <Alert severity="success" icon={<CheckCircle2 />} sx={{ mt: 2, backgroundColor: "rgba(76, 175, 80, 0.1)", color: "white" }}>
-          Thank you for your message! We'll get back to you as soon as possible.
-        </Alert>
-      )}
+        {formStatus === "error" && (
+          <Alert
+            severity="error"
+            icon={<AlertCircle />}
+            sx={{
+              mt: 2,
+              backgroundColor: "rgba(244, 67, 54, 0.1)",
+              color: "white",
+            }}
+          >
+            There was an error submitting your message. Please try again later.
+          </Alert>
+        )}
+        {formStatus === "success" && (
+          <Alert
+            severity="success"
+            icon={<CheckCircle2 />}
+            sx={{
+              mt: 2,
+              backgroundColor: "rgba(76, 175, 80, 0.1)",
+              color: "white",
+            }}
+          >
+            Thank you for your message! We'll get back to you as soon as
+            possible.
+          </Alert>
+        )}
       </Box>
     </Box>
-  )
+  );
 }

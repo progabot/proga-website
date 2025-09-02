@@ -1,6 +1,6 @@
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import { Box, Typography, Container, Grid } from "@mui/material"
-import Image from "next/image"
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import { Box, Typography, Container, Grid } from "@mui/material";
+import Image from "next/image";
 
 export default function OurStory() {
   return (
@@ -15,7 +15,6 @@ export default function OurStory() {
             height={813}
             style={{ width: "100%", height: "auto" }}
           />
-
         </Grid>
 
         {/* Story content */}
@@ -41,8 +40,9 @@ export default function OurStory() {
               mb: 3,
             }}
           >
-            Proga Tech is a Ukraine-based company born during the war, a time of chaos and uncertainty. While the world
-            was standing still, we chose to begin.
+            Proga Tech is a Ukraine-based company born during the war, a time of
+            chaos and uncertainty. While the world was standing still, we chose
+            to begin.
           </Typography>
 
           <Typography
@@ -54,8 +54,9 @@ export default function OurStory() {
               mb: 3,
             }}
           >
-            Founded by <strong>Solomia Demkiv</strong>, founder and visionary, we brought together a team that believes
-            in the power of technology to create light even in the darkest times.
+            Founded by <strong>Solomia Demkiv</strong>, founder and visionary,
+            we brought together a team that believes in the power of technology
+            to create light even in the darkest times.
           </Typography>
 
           <Typography
@@ -67,9 +68,10 @@ export default function OurStory() {
               mb: 3,
             }}
           >
-            Our first external hiring experience was tough and disappointing. But it taught us what truly matters:
-            people, culture, and shared values. That's why we focus on growing talent from within while staying open to
-            rare gems who align with our mission.
+            Our first external hiring experience was tough and disappointing.
+            But it taught us what truly matters: people, culture, and shared
+            values. That's why we focus on growing talent from within while
+            staying open to rare gems who align with our mission.
           </Typography>
 
           <Typography
@@ -80,10 +82,11 @@ export default function OurStory() {
               color: "#666666",
             }}
           >
-            Since 2022, we've grown 16 team members and continue to expand with purpose.
+            Since 2022, we've grown 16 team members and continue to expand with
+            purpose.
           </Typography>
         </Grid>
       </Grid>
     </Container>
-  )
+  );
 }

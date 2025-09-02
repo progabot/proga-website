@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Box, Container, Typography, IconButton } from "@mui/material"
-import { ArrowBack, ArrowForward } from "@mui/icons-material"
-import { motion } from "framer-motion"
-import { useRef, useState, useEffect } from "react"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import { Box, Container, Typography, IconButton } from "@mui/material";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 const processSteps = [
   {
@@ -27,48 +27,66 @@ const processSteps = [
     title: "Web Development",
     description: "Fast and scalable solutions built with modern tech",
   },
-]
+];
 
 export default function DevelopmentProcess() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const checkScrollPosition = () => {
     if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current
-      setCanScrollLeft(scrollLeft > 0)
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1)
+      const { scrollLeft, scrollWidth, clientWidth } =
+        scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
     }
-  }
+  };
 
   useEffect(() => {
-    checkScrollPosition()
-  }, [])
+    checkScrollPosition();
+  }, []);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
         left: -300,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
         left: 300,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   return (
-    <Box component="section" sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#2a2a2a", color: "#fff" }}>
+    <Box
+      component="section"
+      sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#2a2a2a", color: "#fff" }}
+    >
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 6 }}>
-          <Typography variant="h2" sx={{ fontSize: { xs: "1.75rem", md: "2rem" }, fontWeight: 400, color: "#fff" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 6,
+          }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "1.75rem", md: "2rem" },
+              fontWeight: 400,
+              color: "#fff",
+            }}
+          >
             We do full-cycle development
           </Typography>
           <Box sx={{ display: "flex", gap: 1 }}>
@@ -154,10 +172,21 @@ export default function DevelopmentProcess() {
                 >
                   {step.number}
                 </Typography>
-                <Typography variant="h4" sx={{ fontSize: "1.25rem", fontWeight: 600, mb: 2, color: "#fff" }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontSize: "1.25rem",
+                    fontWeight: 600,
+                    mb: 2,
+                    color: "#fff",
+                  }}
+                >
                   {step.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#ccc", lineHeight: 1.5, fontSize: "0.9rem" }}>
+                <Typography
+                  variant="body2"
+                  sx={{ color: "#ccc", lineHeight: 1.5, fontSize: "0.9rem" }}
+                >
                   {step.description}
                 </Typography>
               </Box>
@@ -166,5 +195,5 @@ export default function DevelopmentProcess() {
         </Box>
       </Container>
     </Box>
-  )
+  );
 }

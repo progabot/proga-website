@@ -1,11 +1,11 @@
-import Link from "next/link"
-import Script from "next/script"
-import { Box, Container, Typography, IconButton } from "@mui/material"
-import { Facebook, Instagram, LinkedIn, GitHub } from "@mui/icons-material"
-import XIcon from "@mui/icons-material/X"
-import Image from "next/image"
-import Divider from '@mui/material/Divider';
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import Link from "next/link";
+import Script from "next/script";
+import { Box, Container, Typography, IconButton } from "@mui/material";
+import { Facebook, Instagram, LinkedIn, GitHub } from "@mui/icons-material";
+import XIcon from "@mui/icons-material/X";
+import Image from "next/image";
+import Divider from "@mui/material/Divider";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 export default function Footer() {
   return (
@@ -24,27 +24,42 @@ export default function Footer() {
           {/* Navigation Links */}
           <Box sx={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
             <Link href="/" style={{ textDecoration: "none" }}>
-              <Typography variant="body1" sx={{ color: "#333", "&:hover": { color: "#000" } }}>
+              <Typography
+                variant="body1"
+                sx={{ color: "#333", "&:hover": { color: "#000" } }}
+              >
                 Home
               </Typography>
             </Link>
             <Link href="/cases" style={{ textDecoration: "none" }}>
-              <Typography variant="body1" sx={{ color: "#333", "&:hover": { color: "#000" } }}>
+              <Typography
+                variant="body1"
+                sx={{ color: "#333", "&:hover": { color: "#000" } }}
+              >
                 Cases
               </Typography>
             </Link>
             <Link href="/services" style={{ textDecoration: "none" }}>
-              <Typography variant="body1" sx={{ color: "#333", "&:hover": { color: "#000" } }}>
+              <Typography
+                variant="body1"
+                sx={{ color: "#333", "&:hover": { color: "#000" } }}
+              >
                 Services
               </Typography>
             </Link>
             <Link href="/careers" style={{ textDecoration: "none" }}>
-              <Typography variant="body1" sx={{ color: "#333", "&:hover": { color: "#000" } }}>
+              <Typography
+                variant="body1"
+                sx={{ color: "#333", "&:hover": { color: "#000" } }}
+              >
                 Careers
               </Typography>
             </Link>
             <Link href="/about" style={{ textDecoration: "none" }}>
-              <Typography variant="body1" sx={{ color: "#333", "&:hover": { color: "#000" } }}>
+              <Typography
+                variant="body1"
+                sx={{ color: "#333", "&:hover": { color: "#000" } }}
+              >
                 About
               </Typography>
             </Link>
@@ -54,7 +69,9 @@ export default function Footer() {
           {/* <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="45" data-nofollow="false" data-expandifr="true" data-scale="100" data-clutchcompany-id="2281469"></div> */}
         </Box>
 
-        <Box sx={{ display: "flex", gap: 1, mb: 4, justifyContent: "flex-start" }}>
+        <Box
+          sx={{ display: "flex", gap: 1, mb: 4, justifyContent: "flex-start" }}
+        >
           <IconButton
             component="a"
             href="https://www.facebook.com/profile.php?id=61567231930216"
@@ -143,5 +160,5 @@ export default function Footer() {
         </Box>
       </Container>
     </Box>
-  )
+  );
 }

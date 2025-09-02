@@ -1,8 +1,14 @@
-"use client"
+"use client";
 
-import { Box, Typography, Grid, Card, CardContent } from "@mui/material"
-import { Favorite, Lightbulb, People, Visibility, School } from "@mui/icons-material"
-import StickyTwoColumnLayout from "@/components/shared/sticky-two-column-layout"
+import { Box, Typography, Grid, Card, CardContent } from "@mui/material";
+import {
+  Favorite,
+  Lightbulb,
+  People,
+  Visibility,
+  School,
+} from "@mui/icons-material";
+import StickyTwoColumnLayout from "@/components/shared/sticky-two-column-layout";
 
 export default function ValuesSection() {
   const values = [
@@ -31,7 +37,7 @@ export default function ValuesSection() {
       title: "Curiosity and lifelong learning",
       description: "We never stop improving",
     },
-  ]
+  ];
 
   const stickyContent = (
     <>
@@ -39,11 +45,12 @@ export default function ValuesSection() {
         Values
       </Typography>
       <Typography variant="body1" sx={{ color: "#ccc", lineHeight: 1.6 }}>
-        Our values guide every decision we make and every line of code we write. We believe great products come
-        from great relationships built on trust, transparency, and shared ambition.
+        Our values guide every decision we make and every line of code we write.
+        We believe great products come from great relationships built on trust,
+        transparency, and shared ambition.
       </Typography>
     </>
-  )
+  );
 
   const mainContent = (
     <Grid container spacing={3}>
@@ -57,7 +64,9 @@ export default function ValuesSection() {
               boxShadow: "none",
             }}
           >
-            <CardContent sx={{ display: "flex", flexDirection: "column", p: 3 }}>
+            <CardContent
+              sx={{ display: "flex", flexDirection: "column", p: 3 }}
+            >
               <Box sx={{ mr: 3, mb: 4 }}>{value.icon}</Box>
               <Box>
                 <Typography variant="h6" sx={{ mb: 1, fontWeight: "bold" }}>
@@ -72,7 +81,7 @@ export default function ValuesSection() {
         </Grid>
       ))}
     </Grid>
-  )
+  );
 
   return (
     <StickyTwoColumnLayout
@@ -80,5 +89,5 @@ export default function ValuesSection() {
       mainContent={mainContent}
       containerProps={{ sx: { color: "white" } }}
     />
-  )
+  );
 }

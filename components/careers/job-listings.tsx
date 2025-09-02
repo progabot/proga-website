@@ -1,7 +1,16 @@
-import { Container, Typography, Box, Grid, Card, CardContent, Chip, Button } from "@mui/material"
-import { LocationOn, Schedule, NorthEast, East } from "@mui/icons-material"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import Link from "next/link"
+import {
+  Container,
+  Typography,
+  Box,
+  Grid,
+  Card,
+  CardContent,
+  Chip,
+  Button,
+} from "@mui/material";
+import { LocationOn, Schedule, NorthEast, East } from "@mui/icons-material";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import Link from "next/link";
 
 const jobs = [
   {
@@ -20,11 +29,13 @@ const jobs = [
     title: "QA Automation Engineer",
     type: "Full-time",
   },
-]
+];
 
 export default function JobListings() {
   return (
-    <Box sx={{ backgroundColor: "#1a1a1a", color: "#fff", py: { xs: 6, md: 10 } }}>
+    <Box
+      sx={{ backgroundColor: "#1a1a1a", color: "#fff", py: { xs: 6, md: 10 } }}
+    >
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <Typography
           variant="h2"
@@ -40,7 +51,7 @@ export default function JobListings() {
 
         <Grid container spacing={4}>
           {jobs.map((job, index) => (
-            <Grid size={{xs:12,md:6}} key={index}>
+            <Grid size={{ xs: 12, md: 6 }} key={index}>
               <Card
                 sx={{
                   backgroundColor: "#2a2a2a",
@@ -55,7 +66,16 @@ export default function JobListings() {
                 }}
               >
                 <CardContent sx={{ p: 4 }}>
-                  <Box sx={{ display: "flex", gap: 1, mb: 3, flexWrap: "wrap", alignItems: "center", color: "#fff" }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      gap: 1,
+                      mb: 3,
+                      flexWrap: "wrap",
+                      alignItems: "center",
+                      color: "#fff",
+                    }}
+                  >
                     <Schedule sx={{ fontSize: 20, color: "#EFBED2" }} />
                     {job.type}
                   </Box>
@@ -71,25 +91,25 @@ export default function JobListings() {
                     {job.title}
                   </Typography>
 
-                    <Button
-                      component={Link}
-                      href="/contact"
-                      variant="outlined"
-                      sx={{
-                        borderColor: "#666",
-                        color: "#fff",
-                        borderRadius: 2,
-                        px: 3,
-                        py: 1,
-                        "&:hover": {
-                          borderColor: "#fff",
-                          backgroundColor: "rgba(255,255,255,0.1)",
-                        },
-                      }}
-                      endIcon={<East />}
-                    >
-                      Apply now
-                    </Button>
+                  <Button
+                    component={Link}
+                    href="/contact"
+                    variant="outlined"
+                    sx={{
+                      borderColor: "#666",
+                      color: "#fff",
+                      borderRadius: 2,
+                      px: 3,
+                      py: 1,
+                      "&:hover": {
+                        borderColor: "#fff",
+                        backgroundColor: "rgba(255,255,255,0.1)",
+                      },
+                    }}
+                    endIcon={<East />}
+                  >
+                    Apply now
+                  </Button>
                 </CardContent>
               </Card>
             </Grid>
@@ -97,5 +117,5 @@ export default function JobListings() {
         </Grid>
       </Container>
     </Box>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { ThemeProvider } from "@mui/material/styles"
-import CssBaseline from "@mui/material/CssBaseline"
-import { theme } from "@/theme/mui-theme"
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { theme } from "@/theme/mui-theme";
 
 interface MuiThemeProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function MuiThemeProvider({ children }: MuiThemeProviderProps) {
@@ -14,5 +14,5 @@ export function MuiThemeProvider({ children }: MuiThemeProviderProps) {
       <CssBaseline />
       {children}
     </ThemeProvider>
-  )
+  );
 }

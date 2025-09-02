@@ -1,24 +1,33 @@
-import { Box, Container, Typography, Grid, Button, Card, CardContent } from "@mui/material"
-import Image from "next/image"
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import CustomerTestimonials from "@/components/cases/testimonials"
-import CaseStudyOverview from "@/components/cases/case-study-overview"
-import ChallengesList from "@/components/cases/challenges-list"
-import SolutionsList from "@/components/cases/solutions-list"
-import CaseStudyHero from "@/components/cases/case-study-hero"
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Button,
+  Card,
+  CardContent,
+} from "@mui/material";
+import Image from "next/image";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import CustomerTestimonials from "@/components/cases/testimonials";
+import CaseStudyOverview from "@/components/cases/case-study-overview";
+import ChallengesList from "@/components/cases/challenges-list";
+import SolutionsList from "@/components/cases/solutions-list";
+import CaseStudyHero from "@/components/cases/case-study-hero";
 
 export const metadata = {
   title: "Erudition | Case Study | Proga Tech",
-  description: "Learning platform case study. Educational solution with course management, student tracking, and interactive learning tools for modern education.",
-}
+  description:
+    "Learning platform case study. Educational solution with course management, student tracking, and interactive learning tools for modern education.",
+};
 
 const CHALLENGES = [
   { text: "Rote memorization that doesn't stick" },
   { text: "Boring study materials that put you to sleep" },
   { text: "No real understanding of how concepts connect" },
-  { text: "One-dimensional learning that doesn't engage your brain fully" }
-]
+  { text: "One-dimensional learning that doesn't engage your brain fully" },
+];
 
 const SOLUTIONS = [
   {
@@ -38,17 +47,20 @@ const SOLUTIONS = [
   },
   {
     title: "Visual + verbal learning",
-    description: "We pair illustrations with explanations because your brain learns better with both.",
+    description:
+      "We pair illustrations with explanations because your brain learns better with both.",
   },
   {
     title: "Smart repetition",
-    description: "See the same concepts again at the right times so you don't forget them.",
+    description:
+      "See the same concepts again at the right times so you don't forget them.",
   },
   {
     title: "Active engagement",
-    description: "Learn through interactive quizzes and challenges rather than passive reading.",
+    description:
+      "Learn through interactive quizzes and challenges rather than passive reading.",
   },
-]
+];
 
 const TESTIMONIALS = [
   {
@@ -61,7 +73,7 @@ const TESTIMONIALS = [
     authorTitle: "McMaster University",
     text: "Your PAT videos were the absolute best by far. I was dying on the Keyhole problems and [other]’s videos were not helping. You actually did difficult examples in your videos and it helped me tremendously!",
   },
-]
+];
 
 export default function EruditionCaseStudy() {
   return (
@@ -70,7 +82,9 @@ export default function EruditionCaseStudy() {
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <CaseStudyHero
           title="Erudition"
-          description={"Learning shouldn't be complicated. We're creating a space where teachers can easily build engaging courses and students actually enjoy the learning process."}
+          description={
+            "Learning shouldn't be complicated. We're creating a space where teachers can easily build engaging courses and students actually enjoy the learning process."
+          }
           tags={["Education", "E-learning"]}
           image="/cases/erudition/hero-image.png"
           imageAlt="Erudition application interface"
@@ -83,16 +97,20 @@ export default function EruditionCaseStudy() {
           src: "/cases/erudition/overview-cover.png",
           alt: "Erudition explanations interface",
           width: 500,
-          height: 600
+          height: 600,
         }}
       >
         <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
           Helping you make sense of things
         </Typography>
-        <Typography variant="body1" sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}>
-          We use proven learning principles to make exam prep less stressful and more effective. Whether you're
-          mastering GRE vocabulary or developing visual skills for the DAT, we're here to help you see how
-          everything connects.
+        <Typography
+          variant="body1"
+          sx={{ mb: 6, lineHeight: 1.6, color: "#cccccc" }}
+        >
+          We use proven learning principles to make exam prep less stressful and
+          more effective. Whether you're mastering GRE vocabulary or developing
+          visual skills for the DAT, we're here to help you see how everything
+          connects.
         </Typography>
 
         <ChallengesList
@@ -107,32 +125,47 @@ export default function EruditionCaseStudy() {
         subtitle="Master new skills the smart way. Personalized learning plans, progress tracking, and study tools that actually help you remember what you learn."
       />
 
-      <Box display={"flex"} justifyContent="center" sx={{ backgroundColor: "#1a1a1a" }}>
+      <Box
+        display={"flex"}
+        justifyContent="center"
+        sx={{ backgroundColor: "#1a1a1a" }}
+      >
         <Image
           src="/cases/erudition/showcase.jpg"
           alt="Erudition interface showcase"
           width={1440}
           height={1980}
-          style={{ width: "100%", maxWidth: "1440px", height: "auto" }}
+          style={{ width: "100%", maxWidth: "1600px", height: "auto" }}
         />
       </Box>
 
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
-          <CustomerTestimonials testimonials={TESTIMONIALS} />
+        <CustomerTestimonials testimonials={TESTIMONIALS} />
       </Container>
 
       <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
         <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-          <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
+          <Typography
+            variant="h3"
+            component="h2"
+            sx={{ fontWeight: "bold", mb: 6 }}
+          >
             Experience Erudition
           </Typography>
 
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Card
-                sx={{ backgroundColor: "#1a1a1a", color: "white", height: "100%", border: "1px solid #737373" }}
+                sx={{
+                  backgroundColor: "#1a1a1a",
+                  color: "white",
+                  height: "100%",
+                  border: "1px solid #737373",
+                }}
               >
-                <CardContent sx={{ p: 0, paddingBottom: '0 !important', display: "flex" }}>
+                <CardContent
+                  sx={{ p: 0, paddingBottom: "0 !important", display: "flex" }}
+                >
                   <Box
                     p={2}
                     pr={0}
@@ -142,9 +175,18 @@ export default function EruditionCaseStudy() {
                     alignItems="baseline"
                   >
                     <Box>
-                      <Image src="/cases/erudition/dat-logo.png" alt="Erudition Dat" width={180} height={36} />
-                      <Typography variant="body1" sx={{ mb: 4, mt: 2, color: "#cccccc" }}>
-                        Get a fun training task in your inbox every week (no course registration required).
+                      <Image
+                        src="/cases/erudition/dat-logo.png"
+                        alt="Erudition Dat"
+                        width={180}
+                        height={36}
+                      />
+                      <Typography
+                        variant="body1"
+                        sx={{ mb: 4, mt: 2, color: "#cccccc" }}
+                      >
+                        Get a fun training task in your inbox every week (no
+                        course registration required).
                       </Typography>
                     </Box>
                     <Button
@@ -164,11 +206,13 @@ export default function EruditionCaseStudy() {
                       Play Erudition PAT
                     </Button>
                   </Box>
-                  <Box sx={{ textAlign: "center" }}
+                  <Box
+                    sx={{ textAlign: "center" }}
                     display="flex"
                     justifyContent="end"
                     flexDirection="column"
-                    alignItems="baseline">
+                    alignItems="baseline"
+                  >
                     <Image
                       src="/cases/erudition/dat-preview.png"
                       alt="Erudition DAT mobile app"
@@ -182,8 +226,22 @@ export default function EruditionCaseStudy() {
             </Grid>
 
             <Grid size={{ xs: 12, md: 6 }}>
-              <Card sx={{ backgroundColor: "#1a1a1a", color: "white", height: "100%", border: "1px solid #737373" }}>
-                <CardContent sx={{ p: 0, paddingBottom: '0 !important', display: "flex", height: "100%" }}>
+              <Card
+                sx={{
+                  backgroundColor: "#1a1a1a",
+                  color: "white",
+                  height: "100%",
+                  border: "1px solid #737373",
+                }}
+              >
+                <CardContent
+                  sx={{
+                    p: 0,
+                    paddingBottom: "0 !important",
+                    display: "flex",
+                    height: "100%",
+                  }}
+                >
                   <Box
                     p={2}
                     pr={0}
@@ -193,9 +251,18 @@ export default function EruditionCaseStudy() {
                     alignItems="baseline"
                   >
                     <Box>
-                      <Image src="/cases/erudition/vocab-logo.png" alt="Erudition Vocab" width={180} height={36} />
-                      <Typography variant="body1" sx={{ mb: 4, mt: 2, color: "#cccccc" }}>
-                        Learn advanced vocabulary with clever illustrations, word origins, and memorable associations.
+                      <Image
+                        src="/cases/erudition/vocab-logo.png"
+                        alt="Erudition Vocab"
+                        width={180}
+                        height={36}
+                      />
+                      <Typography
+                        variant="body1"
+                        sx={{ mb: 4, mt: 2, color: "#cccccc" }}
+                      >
+                        Learn advanced vocabulary with clever illustrations,
+                        word origins, and memorable associations.
                       </Typography>
                     </Box>
                     <Button
@@ -215,11 +282,13 @@ export default function EruditionCaseStudy() {
                       Boost your GRE Vocab
                     </Button>
                   </Box>
-                  <Box sx={{ textAlign: "center" }}
+                  <Box
+                    sx={{ textAlign: "center" }}
                     display="flex"
                     justifyContent="end"
                     flexDirection="column"
-                    alignItems="baseline">
+                    alignItems="baseline"
+                  >
                     <Image
                       src="/cases/erudition/vocab-preview.png"
                       alt="Erudition DAT mobile app"
@@ -238,7 +307,11 @@ export default function EruditionCaseStudy() {
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
         <Grid container spacing={6}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
+            <Typography
+              variant="h3"
+              component="h2"
+              sx={{ fontWeight: "bold", mb: 6 }}
+            >
               Technology stack
             </Typography>
           </Grid>
@@ -248,12 +321,14 @@ export default function EruditionCaseStudy() {
             </Typography>
             <Box sx={{ mb: 2 }}>
               <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                • Next.js framework for enhanced performance and SEO optimization
+                • Next.js framework for enhanced performance and SEO
+                optimization
               </Typography>
             </Box>
             <Box sx={{ mb: 2 }}>
               <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                • Storybook UI library for efficient component reuse across multiple projects
+                • Storybook UI library for efficient component reuse across
+                multiple projects
               </Typography>
             </Box>
             <Box sx={{ mb: 2 }}>
@@ -266,7 +341,8 @@ export default function EruditionCaseStudy() {
             </Typography>
             <Box sx={{ mb: 2 }}>
               <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                • Java with Spring Boot framework for robust application development
+                • Java with Spring Boot framework for robust application
+                development
               </Typography>
             </Box>
             <Box sx={{ mb: 2 }}>
@@ -307,17 +383,21 @@ export default function EruditionCaseStudy() {
 
         <Box sx={{ backgroundColor: "#f5f5f5", p: 4, mt: 6, borderRadius: 2 }}>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            As Stripe Payment Gateway integration experts, we implemented a comprehensive billing system for Erudition:
+            As Stripe Payment Gateway integration experts, we implemented a
+            comprehensive billing system for Erudition:
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", gap: 4 }}>
             <Box>
               <Typography variant="body2" sx={{ mb: 1 }}>
-                • Monthly subscription billing with automatic 3-month course access
+                • Monthly subscription billing with automatic 3-month course
+                access
               </Typography>
               <Typography variant="body2" sx={{ mb: 1 }}>
                 • 100% coupon discounts for the priority student list
               </Typography>
-              <Typography variant="body2">• Granular access to the courses based on the billing status</Typography>
+              <Typography variant="body2">
+                • Granular access to the courses based on the billing status
+              </Typography>
             </Box>
             <Box sx={{ ml: "auto" }}>
               <Image
@@ -408,5 +488,5 @@ export default function EruditionCaseStudy() {
         </Grid>
       </Container> */}
     </Box>
-  )
+  );
 }

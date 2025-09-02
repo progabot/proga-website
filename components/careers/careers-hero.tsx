@@ -1,10 +1,13 @@
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import { Container, Typography, Box } from "@mui/material"
-import Image from "next/image"
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import { Container, Typography, Box } from "@mui/material";
+import Image from "next/image";
 
 export default function CareersHero() {
   return (
-    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: { xs: 6, md: 10 } }}>
+    <Container
+      maxWidth={PAGE_CONTAINER_MAX_WIDTH}
+      sx={{ py: { xs: 6, md: 10 } }}
+    >
       <Box sx={{ textAlign: "left", mb: 6 }}>
         <Typography
           variant="h1"
@@ -28,8 +31,8 @@ export default function CareersHero() {
             lineHeight: 1.6,
           }}
         >
-          Choosing where to build your career is a big decision. At Proga Tech, we offer a unique blend of professional
-          growth and personal support.
+          Choosing where to build your career is a big decision. At Proga Tech,
+          we offer a unique blend of professional growth and personal support.
         </Typography>
       </Box>
 
@@ -38,8 +41,14 @@ export default function CareersHero() {
           position: "relative",
         }}
       >
-          <Image src="/team-photo-1.png" alt="Proga Tech team in modern office" width={1324} height={820} style={{ width: "100%", height: "auto" }} />
+        <Image
+          src="/team-photo-1.png"
+          alt="Proga Tech team in modern office"
+          width={1324}
+          height={820}
+          style={{ width: "100%", height: "auto" }}
+        />
       </Box>
     </Container>
-  )
+  );
 }

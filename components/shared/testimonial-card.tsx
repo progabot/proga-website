@@ -4,13 +4,19 @@ import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Testimonial } from "@/utils/testimonials"
-import Link from "next/link"
-import Image from "next/image"
+import { Testimonial } from "@/utils/testimonials";
+import Link from "next/link";
+import Image from "next/image";
 import { East } from "@mui/icons-material";
 import ProgaShapedBox from "./proga-shaped-box";
 
-export default function TestimonialCard({ testimonial, light = false }: { testimonial: Testimonial, light?: boolean }) {
+export default function TestimonialCard({
+  testimonial,
+  light = false,
+}: {
+  testimonial: Testimonial;
+  light?: boolean;
+}) {
   return (
     <ProgaShapedBox light={light}>
       <Stack spacing={4}>
@@ -25,14 +31,26 @@ export default function TestimonialCard({ testimonial, light = false }: { testim
             <Typography variant="h6" fontWeight={600} gutterBottom={false}>
               {testimonial.authorName}
             </Typography>
-            <Typography variant="body1" sx={{ color: light ? "#666666" : "#a5a5a5" }}>
+            <Typography
+              variant="body1"
+              sx={{ color: light ? "#666666" : "#a5a5a5" }}
+            >
               {testimonial.authorTitle}
             </Typography>
           </Box>
         </Stack>
 
         <Box display="flex" gap={2}>
-          <Typography variant="h5" sx={{ display: { xs: "none", sm: "block" }, lineHeight: 1, fontSize: "70px", color: light ? "#D6336C" : "#EFBED2" }} fontWeight={300}>
+          <Typography
+            variant="h5"
+            sx={{
+              display: { xs: "none", sm: "block" },
+              lineHeight: 1,
+              fontSize: "70px",
+              color: light ? "#D6336C" : "#EFBED2",
+            }}
+            fontWeight={300}
+          >
             "
           </Typography>
           <Stack spacing={4} mt={3}>
@@ -45,7 +63,9 @@ export default function TestimonialCard({ testimonial, light = false }: { testim
                 <Button
                   variant="outlined"
                   sx={{
-                    borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
+                    borderColor: light
+                      ? "rgba(0,0,0,0.25)"
+                      : "rgba(255,255,255,0.35)",
                     color: light ? "#2a2a2a" : "#eaeaea",
                     px: 3,
                     "&:hover": {
@@ -58,7 +78,8 @@ export default function TestimonialCard({ testimonial, light = false }: { testim
                   href={`/cases/${testimonial.caseStudyId}`}
                 >
                   See full case study
-                </Button>)}
+                </Button>
+              )}
               {testimonial.clutchLink && (
                 <Button
                   component="a"
@@ -67,7 +88,9 @@ export default function TestimonialCard({ testimonial, light = false }: { testim
                   rel="noopener noreferrer"
                   variant="outlined"
                   sx={{
-                    borderColor: light ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.35)",
+                    borderColor: light
+                      ? "rgba(0,0,0,0.25)"
+                      : "rgba(255,255,255,0.35)",
                     color: light ? "#2a2a2a" : "#eaeaea",
                     px: 3,
                     "&:hover": {
@@ -77,7 +100,13 @@ export default function TestimonialCard({ testimonial, light = false }: { testim
                   }}
                   endIcon={<span style={{ fontSize: 18 }}>↗</span>}
                 >
-                  <Image src={"/icons/clutch.png"} alt={`Clutch`} width={24} height={24} style={{ marginRight: "10px" }} />
+                  <Image
+                    src={"/icons/clutch.png"}
+                    alt={`Clutch`}
+                    width={24}
+                    height={24}
+                    style={{ marginRight: "10px" }}
+                  />
                   Read on Clutch
                   {/* todo: update icon */}
                 </Button>

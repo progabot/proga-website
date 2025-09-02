@@ -1,5 +1,5 @@
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import { Typography, Container } from "@mui/material"
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import { Typography, Container } from "@mui/material";
 
 export default function AboutHero() {
   return (
@@ -25,10 +25,11 @@ export default function AboutHero() {
           maxWidth: "950",
         }}
       >
-        A creative and people-first tech company. We grow talent, build meaningful projects, purpose-driven solutions
-        and shape the future of tech. Founded in challenging times, we've built resilience, creativity, and care into
-        everything we do.
+        A creative and people-first tech company. We grow talent, build
+        meaningful projects, purpose-driven solutions and shape the future of
+        tech. Founded in challenging times, we've built resilience, creativity,
+        and care into everything we do.
       </Typography>
     </Container>
-  )
+  );
 }

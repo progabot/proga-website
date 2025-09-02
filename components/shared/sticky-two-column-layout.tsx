@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { Box, Container, Grid, GridProps, SxProps } from "@mui/material"
-import { ReactNode } from "react"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import { Box, Container, Grid, GridProps, SxProps } from "@mui/material";
+import { ReactNode } from "react";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 interface StickyTwoColumnLayoutProps {
-  stickyContent: ReactNode
-  mainContent: ReactNode
-  backgroundColor?: string
-  containerMaxWidth?: "xs" | "sm" | "md" | "lg" | "xl" | false
-  stickyTop?: string | number
-  py?: number
-  spacing?: number
-  containerProps?: { sx: SxProps }
-  leftColumnProps?: GridProps
-  rightColumnProps?: GridProps
+  stickyContent: ReactNode;
+  mainContent: ReactNode;
+  backgroundColor?: string;
+  containerMaxWidth?: "xs" | "sm" | "md" | "lg" | "xl" | false;
+  stickyTop?: string | number;
+  py?: number;
+  spacing?: number;
+  containerProps?: { sx: SxProps };
+  leftColumnProps?: GridProps;
+  rightColumnProps?: GridProps;
 }
 
 export default function StickyTwoColumnLayout({
@@ -34,7 +34,7 @@ export default function StickyTwoColumnLayout({
       <Container maxWidth={containerMaxWidth}>
         <Grid container spacing={spacing} position={"relative"}>
           <Grid size={{ xs: 12, md: 6 }} {...leftColumnProps}>
-            <Box position={"sticky"} top={stickyTop} >
+            <Box position={"sticky"} top={stickyTop}>
               {stickyContent}
             </Box>
           </Grid>
@@ -44,5 +44,5 @@ export default function StickyTwoColumnLayout({
         </Grid>
       </Container>
     </Box>
-  )
+  );
 }

@@ -1,6 +1,13 @@
-import { Container, Typography, Box, Grid, Card, CardContent } from "@mui/material"
-import { People, Favorite, Public, Schedule } from "@mui/icons-material"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import {
+  Container,
+  Typography,
+  Box,
+  Grid,
+  Card,
+  CardContent,
+} from "@mui/material";
+import { People, Favorite, Public, Schedule } from "@mui/icons-material";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 const values = [
   {
@@ -20,14 +27,18 @@ const values = [
   },
   {
     title: "Flexible & Reliable",
-    description: "Remote or hybrid work, career growth, and a supportive environment.",
+    description:
+      "Remote or hybrid work, career growth, and a supportive environment.",
     icon: Schedule,
   },
-]
+];
 
 export default function WhyChooseProga() {
   return (
-    <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: { xs: 6, md: 10 } }}>
+    <Container
+      maxWidth={PAGE_CONTAINER_MAX_WIDTH}
+      sx={{ py: { xs: 6, md: 10 } }}
+    >
       <Typography
         variant="h2"
         sx={{
@@ -42,9 +53,9 @@ export default function WhyChooseProga() {
 
       <Grid container spacing={4}>
         {values.map((value, index) => {
-          const IconComponent = value.icon
+          const IconComponent = value.icon;
           return (
-            <Grid size={{xs:12,sm:6,md:3}} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
               <Card
                 sx={{
                   height: "100%",
@@ -96,9 +107,9 @@ export default function WhyChooseProga() {
                 </CardContent>
               </Card>
             </Grid>
-          )
+          );
         })}
       </Grid>
     </Container>
-  )
+  );
 }

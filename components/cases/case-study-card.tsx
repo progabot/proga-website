@@ -1,18 +1,18 @@
-import { Box, Typography, Chip, Button, Container } from "@mui/material"
-import { East, NorthEast } from "@mui/icons-material"
-import Image from "next/image"
-import Link from "next/link"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import { Box, Typography, Chip, Button, Container } from "@mui/material";
+import { East, NorthEast } from "@mui/icons-material";
+import Image from "next/image";
+import Link from "next/link";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 interface CaseStudyCardProps {
-  logo: string
-  title: string
-  description: string
-  tags: string[]
-  mockupImage: string
-  mockupAlt: string
-  href: string
-  reverse?: boolean
+  logo: string;
+  title: string;
+  description: string;
+  tags: string[];
+  mockupImage: string;
+  mockupAlt: string;
+  href: string;
+  reverse?: boolean;
 }
 
 export default function CaseStudyCard({
@@ -26,7 +26,11 @@ export default function CaseStudyCard({
   reverse = false,
 }: CaseStudyCardProps) {
   return (
-    <Link href={href} scroll={false} style={{ textDecoration: 'none', color: 'inherit' }}>
+    <Link
+      href={href}
+      scroll={false}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
       <Box
         sx={{
           borderRadius: 3,
@@ -72,7 +76,10 @@ export default function CaseStudyCard({
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", lg: reverse ? "row-reverse" : "row" },
+            flexDirection: {
+              xs: "column",
+              lg: reverse ? "row-reverse" : "row",
+            },
             alignItems: "center",
             gap: { xs: 4, lg: 8 },
             py: 2,
@@ -86,7 +93,6 @@ export default function CaseStudyCard({
               gap: 1,
             }}
           >
-
             <Typography
               variant="h2"
               sx={{
@@ -149,9 +155,7 @@ export default function CaseStudyCard({
                   transition: "transform 0.2s ease",
                 },
               }}
-              endIcon={
-                <East />
-              }
+              endIcon={<East />}
             >
               See full case study
             </Button>
@@ -159,5 +163,5 @@ export default function CaseStudyCard({
         </Box>
       </Box>
     </Link>
-  )
+  );
 }

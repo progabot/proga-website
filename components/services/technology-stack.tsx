@@ -1,9 +1,16 @@
-"use client"
+"use client";
 
-import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material"
-import { Code, Web, Storage, Cloud, Palette } from "@mui/icons-material"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import StickyTwoColumnLayout from "../shared/sticky-two-column-layout"
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+} from "@mui/material";
+import { Code, Web, Storage, Cloud, Palette } from "@mui/icons-material";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import StickyTwoColumnLayout from "../shared/sticky-two-column-layout";
 
 const techCategories = [
   {
@@ -36,21 +43,22 @@ const techCategories = [
     technologies: "Figma, Adobe, Jitter",
     isDark: false,
   },
-]
+];
 
 export default function TechnologyStack() {
   const stickyContent = (
-    <><Typography
-      variant="h2"
-      sx={{
-        fontSize: { xs: "2rem", md: "2.5rem" },
-        fontWeight: 600,
-        mb: 4,
-        color: "#000",
-      }}
-    >
-      Our technology stack
-    </Typography>
+    <>
+      <Typography
+        variant="h2"
+        sx={{
+          fontSize: { xs: "2rem", md: "2.5rem" },
+          fontWeight: 600,
+          mb: 4,
+          color: "#000",
+        }}
+      >
+        Our technology stack
+      </Typography>
       <Typography
         variant="body1"
         sx={{
@@ -71,9 +79,11 @@ export default function TechnologyStack() {
           fontSize: "1rem",
         }}
       >
-        We work with proven technologies like .NET and Node.js for backend development, combined with React and
-        Next.js to build fast, intuitive user interfaces. Whether your project needs a SQL database or something
-        more flexible like MongoDB, we choose the right solution for your specific needs.
+        We work with proven technologies like .NET and Node.js for backend
+        development, combined with React and Next.js to build fast, intuitive
+        user interfaces. Whether your project needs a SQL database or something
+        more flexible like MongoDB, we choose the right solution for your
+        specific needs.
       </Typography>
       <Typography
         variant="body1"
@@ -83,10 +93,11 @@ export default function TechnologyStack() {
           fontSize: "1rem",
         }}
       >
-        With our experience in AWS and Azure, we make sure your applications run smoothly, stay secure, and scale
-        as your business grows.
+        With our experience in AWS and Azure, we make sure your applications run
+        smoothly, stay secure, and scale as your business grows.
       </Typography>
-    </>);
+    </>
+  );
 
   const mainContent = (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
@@ -129,8 +140,8 @@ export default function TechnologyStack() {
           </CardContent>
         </Card>
       ))}
-    </Box>);
-
+    </Box>
+  );
 
   return (
     <StickyTwoColumnLayout
@@ -138,5 +149,5 @@ export default function TechnologyStack() {
       mainContent={mainContent}
       backgroundColor="#fff"
     />
-  )
+  );
 }

@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import { Box, Typography, Card, CardContent } from "@mui/material"
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import { motion } from "framer-motion"
-import StickyTwoColumnLayout from "@/components/shared/sticky-two-column-layout"
+import { Box, Typography, Card, CardContent } from "@mui/material";
+import { motion } from "framer-motion";
+import StickyTwoColumnLayout from "@/components/shared/sticky-two-column-layout";
 import { SERVICES } from "@/utils/services";
 
 export default function Services() {
@@ -15,20 +14,30 @@ export default function Services() {
       >
         Services we provide
       </Typography>
-      <Typography variant="body1" sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}>
-        We build powerful solutions using a modern tech stack, but more importantly, we choose the right tools for
-        your specific needs.
+      <Typography
+        variant="body1"
+        sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}
+      >
+        We build powerful solutions using a modern tech stack, but more
+        importantly, we choose the right tools for your specific needs.
       </Typography>
-      <Typography variant="body1" sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}>
-        We are certified Stripe experts specializing in secure payment processing, subscription management, and
-        e-commerce solutions. From simple checkouts to complex billing systems.
+      <Typography
+        variant="body1"
+        sx={{ color: "#666", mb: 4, lineHeight: 1.7, fontSize: "1rem" }}
+      >
+        We are certified Stripe experts specializing in secure payment
+        processing, subscription management, and e-commerce solutions. From
+        simple checkouts to complex billing systems.
       </Typography>
-      <Typography variant="body1" sx={{ color: "#666", lineHeight: 1.7, fontSize: "1rem" }}>
-        Our team has hands-on experience with everything from React and Node.js to AWS deployment, so you get
-        solutions that really work.
+      <Typography
+        variant="body1"
+        sx={{ color: "#666", lineHeight: 1.7, fontSize: "1rem" }}
+      >
+        Our team has hands-on experience with everything from React and Node.js
+        to AWS deployment, so you get solutions that really work.
       </Typography>
     </>
-  )
+  );
 
   const mainContent = (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
@@ -41,29 +50,31 @@ export default function Services() {
         >
           <Card
             sx={{
-              backgroundColor: service.isDark ? "#1A1A1A" : "transparent",
+              backgroundColor: index === 0 ? "#1A1A1A" : "transparent",
               color: service.isDark ? "#fff" : "#000",
               borderRadius: 3,
               p: 3,
               pb: 0,
               border: service.isDark ? "none" : "1px solid #e0e0e0",
               boxShadow: "none",
-                    "&:hover": {
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                    },
+              "&:hover": {
+                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              },
             }}
           >
             <CardContent sx={{ p: 0 }}>
-              <Box sx={{ 
-                display: "inline-flex", 
-                alignItems: "center", 
-                justifyContent: "center", 
-                width: 56, 
-                height: 56, 
-                borderRadius: "50%", 
-                mb: 5, 
-                backgroundColor: service.isDark ? "#2C2C2C" : "#F7F7F7" 
-              }}>
+              <Box
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 56,
+                  height: 56,
+                  borderRadius: "50%",
+                  mb: 5,
+                  backgroundColor: service.isDark ? "#2C2C2C" : "#F7F7F7",
+                }}
+              >
                 {<service.icon color="#E498B7" size="2rem" />}
               </Box>
               <Typography
@@ -72,7 +83,7 @@ export default function Services() {
                   fontSize: "1.25rem",
                   fontWeight: "regular",
                   color: service.isDark ? "#fff" : "#000",
-                  boxShadow: "none"
+                  boxShadow: "none",
                 }}
               >
                 {service.title}
@@ -82,7 +93,7 @@ export default function Services() {
         </motion.div>
       ))}
     </Box>
-  )
+  );
 
   return (
     <Box component="section">
@@ -96,5 +107,5 @@ export default function Services() {
         rightColumnProps={{ size: { xs: 12, lg: 6 } }}
       />
     </Box>
-  )
+  );
 }

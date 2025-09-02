@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Box, Container, Typography, Button, Stack } from "@mui/material"
-import { motion, AnimatePresence } from "framer-motion"
-import { East } from "@mui/icons-material"
-import { useState, useEffect } from "react"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+import Link from "next/link";
+import { Box, Container, Typography, Button, Stack } from "@mui/material";
+import { motion, AnimatePresence } from "framer-motion";
+import { East } from "@mui/icons-material";
+import { useState, useEffect } from "react";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 export default function Hero() {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0)
-  const [isTyping, setIsTyping] = useState(true)
-  const [displayedText, setDisplayedText] = useState("")
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const [displayedText, setDisplayedText] = useState("");
   const words = ["creativity", "expertise", "code"];
 
   const TYPING_SPEED_IN_MILLISECONDS_PER_CHARACTER = 100;
@@ -18,42 +18,57 @@ export default function Hero() {
   const WORD_PAUSE_DURATION_IN_MILLISECONDS = 2000;
 
   useEffect(() => {
-    const currentWord = words[currentWordIndex]
-    let timeout: NodeJS.Timeout
+    const currentWord = words[currentWordIndex];
+    let timeout: NodeJS.Timeout;
 
     if (isTyping) {
       if (displayedText.length < currentWord.length) {
         timeout = setTimeout(() => {
-          setDisplayedText(currentWord.slice(0, displayedText.length + 1))
-        }, TYPING_SPEED_IN_MILLISECONDS_PER_CHARACTER)
+          setDisplayedText(currentWord.slice(0, displayedText.length + 1));
+        }, TYPING_SPEED_IN_MILLISECONDS_PER_CHARACTER);
       } else {
         timeout = setTimeout(() => {
-          setIsTyping(false)
-        }, WORD_PAUSE_DURATION_IN_MILLISECONDS)
+          setIsTyping(false);
+        }, WORD_PAUSE_DURATION_IN_MILLISECONDS);
       }
     } else {
       if (displayedText.length > 0) {
         timeout = setTimeout(() => {
-          setDisplayedText(displayedText.slice(0, -1))
-        }, ERASING_SPEED_IN_MILLISECONDS_PER_CHARACTER)
+          setDisplayedText(displayedText.slice(0, -1));
+        }, ERASING_SPEED_IN_MILLISECONDS_PER_CHARACTER);
       } else {
-        setCurrentWordIndex((prev) => (prev + 1) % words.length)
-        setIsTyping(true)
+        setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        setIsTyping(true);
       }
     }
 
-    return () => clearTimeout(timeout)
-  }, [currentWordIndex, isTyping, displayedText, words])
+    return () => clearTimeout(timeout);
+  }, [currentWordIndex, isTyping, displayedText, words]);
 
   return (
-    <Box component="section" sx={{ backgroundColor: "#ffffff", overflow: "hidden" }}>
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ pt: { xs: 6, md: 10 }, pb: { xs: 10, md: 20 } }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+    <Box
+      component="section"
+      sx={{ backgroundColor: "#ffffff", overflow: "hidden" }}
+    >
+      <Container
+        maxWidth={PAGE_CONTAINER_MAX_WIDTH}
+        sx={{ pt: { xs: 6, md: 10 }, pb: { xs: 10, md: 20 } }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <Box sx={{ maxWidth: "80rem", textAlign: "left" }}>
             <Typography
               variant="h1"
               sx={{
-                fontSize: { xs: "2.5rem", sm: "3.75rem", md: "4.5rem", lg: "4.625rem" },
+                fontSize: {
+                  xs: "2.5rem",
+                  sm: "3.75rem",
+                  md: "4.5rem",
+                  lg: "4.625rem",
+                },
                 fontWeight: 700,
                 lineHeight: 1.4,
                 color: "#000",
@@ -72,10 +87,10 @@ export default function Hero() {
                   display: "inline-block",
                   lineHeight: 1.1,
                   minWidth: "50px",
-                  textAlign: "left"
+                  textAlign: "left",
                 }}
               >
-                {displayedText.split('').map((letter, index) => (
+                {displayedText.split("").map((letter, index) => (
                   <motion.span
                     key={`${currentWordIndex}-${index}`}
                     initial={{ opacity: 0 }}
@@ -85,11 +100,7 @@ export default function Hero() {
                     {letter}
                   </motion.span>
                 ))}
-                <span
-                  style={{ fontSize: "1px", visibility: "hidden" }}
-                >
-                  |
-                </span>
+                <span style={{ fontSize: "1px", visibility: "hidden" }}>|</span>
               </span>
             </Typography>
             <Typography
@@ -102,8 +113,9 @@ export default function Hero() {
                 mb: { xs: 8, md: 12 },
               }}
             >
-              By combining creativity, deep domain knowledge, and a user-centered development process, we build
-              solutions that drive meaningful impact for both users and businesses
+              By combining creativity, deep domain knowledge, and a
+              user-centered development process, we build solutions that drive
+              meaningful impact for both users and businesses
             </Typography>
             <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
               <Button
@@ -152,5 +164,5 @@ export default function Hero() {
         </motion.div>
       </Container>
     </Box>
-  )
+  );
 }

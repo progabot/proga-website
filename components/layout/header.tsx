@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   AppBar,
   Toolbar,
@@ -16,10 +16,10 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-} from "@mui/material"
-import { Menu, Close, East } from "@mui/icons-material"
-import Image from "next/image"
-import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
+} from "@mui/material";
+import { Menu, Close, East } from "@mui/icons-material";
+import Image from "next/image";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -27,11 +27,11 @@ const navigation = [
   { name: "Services", href: "/services" },
   { name: "Careers", href: "/careers" },
   { name: "About", href: "/about" },
-]
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <AppBar
@@ -44,8 +44,18 @@ export default function Header() {
       }}
     >
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
-        <Toolbar disableGutters sx={{ justifyContent: "space-between", py: 3, px: 0 }}>
-          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+        <Toolbar
+          disableGutters
+          sx={{ justifyContent: "space-between", py: 3, px: 0 }}
+        >
+          <Link
+            href="/"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Image
               src="/proga-longlogo.png"
               alt="ProgaTech"
@@ -55,9 +65,23 @@ export default function Header() {
             />
           </Link>
 
-          <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 4, position: "absolute", left: '50%;', top: '50%', transform: "translate(-50%, -50%)" }}>
+          <Box
+            sx={{
+              display: { xs: "none", lg: "flex" },
+              gap: 4,
+              position: "absolute",
+              left: "50%;",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
             {navigation.map((item) => (
-              <Link key={item.name} scroll={false} href={item.href} style={{ textDecoration: "none" }}>
+              <Link
+                key={item.name}
+                scroll={false}
+                href={item.href}
+                style={{ textDecoration: "none" }}
+              >
                 <Typography
                   variant="body1"
                   sx={{
@@ -71,14 +95,14 @@ export default function Header() {
                     "&::after":
                       pathname === item.href
                         ? {
-                          content: '""',
-                          position: "absolute",
-                          bottom: -4,
-                          left: 0,
-                          right: 0,
-                          height: 2,
-                          backgroundColor: "#f8bbd9",
-                        }
+                            content: '""',
+                            position: "absolute",
+                            bottom: -4,
+                            left: 0,
+                            right: 0,
+                            height: 2,
+                            backgroundColor: "#f8bbd9",
+                          }
                         : {},
                   }}
                 >
@@ -109,10 +133,13 @@ export default function Header() {
               Contact us
             </Button>
 
-            <IconButton onClick={() => setMobileMenuOpen(true)} sx={{
-              color: "#666",
-              display: { xs: "block", lg: "none" },
-            }}>
+            <IconButton
+              onClick={() => setMobileMenuOpen(true)}
+              sx={{
+                color: "#666",
+                display: { xs: "block", lg: "none" },
+              }}
+            >
               <Menu />
             </IconButton>
           </Box>
@@ -131,8 +158,23 @@ export default function Header() {
         }}
       >
         <Box p={3}>
-          <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 3 }}>
-            <Link onClick={() => setMobileMenuOpen(false)} href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              mb: 3,
+            }}
+          >
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              href="/"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <Image
                 src="/proga-longlogo.png"
                 alt="ProgaTech"
@@ -156,7 +198,8 @@ export default function Header() {
                   sx={{
                     borderRadius: 2,
                     mb: 1,
-                    backgroundColor: pathname === item.href ? "#f5f5f5" : "transparent",
+                    backgroundColor:
+                      pathname === item.href ? "#f5f5f5" : "transparent",
                   }}
                 >
                   <ListItemText
@@ -197,5 +240,5 @@ export default function Header() {
         </Box>
       </Drawer>
     </AppBar>
-  )
+  );
 }
