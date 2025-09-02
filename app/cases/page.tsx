@@ -5,7 +5,7 @@ import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 export const metadata = {
   title: "Case studies | Proga Tech",
-  description: "",
+  description: "Proga's portfolio: Erudition, Miaplaza, Stridist, PigTracks, ProRapp, Probig. Real client projects across education, healthcare, fitness, and real estate.",
 }
 
 export default function CasesPage() {

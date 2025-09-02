@@ -4,12 +4,13 @@ import { MuiThemeProvider } from "@/components/mui-theme-provider"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import ScrollToTop from "@/components/layout/scroll-to-top"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Proga Tech | Progressive software empowering your ideas",
-  description: "Proga Tech provides cutting-edge software development solutions for businesses of all sizes",
+  description: "Proga Tech transforms businesses with creative web development solutions. Client testimonials, portfolio projects, and full-cycle development services.",
 }
 
 export default function RootLayout({

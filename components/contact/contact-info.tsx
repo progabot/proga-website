@@ -55,7 +55,6 @@ export default function ContactInfo() {
           }}
         >
           Schedule an appointment
-          <NorthEast sx={{ fontSize: 16, color: "#000", ml: 1 }} />
         </Button>
 
         <Dialog

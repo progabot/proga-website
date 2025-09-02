@@ -1,129 +1,80 @@
-import { Box, Container, Typography, Chip, Grid, Button, Card, CardContent } from "@mui/material"
+import { Box, Container, Typography, Grid, Button, Card, CardContent } from "@mui/material"
 import Image from "next/image"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
-import Divider from "@mui/material/Divider"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import EruditionTestimonials from "@/components/erudition/testimonials"
+import CustomerTestimonials from "@/components/cases/testimonials"
 import CaseStudyOverview from "@/components/cases/case-study-overview"
 import ChallengesList from "@/components/cases/challenges-list"
 import SolutionsList from "@/components/cases/solutions-list"
+import CaseStudyHero from "@/components/cases/case-study-hero"
 
 export const metadata = {
   title: "Erudition | Case Study | Proga Tech",
   description: "",
 }
 
+const CHALLENGES = [
+  { text: "Rote memorization that doesn't stick" },
+  { text: "Boring study materials that put you to sleep" },
+  { text: "No real understanding of how concepts connect" },
+  { text: "One-dimensional learning that doesn't engage your brain fully" }
+]
+
+const SOLUTIONS = [
+  {
+    title: "DAT perceptual ability",
+    description:
+      "Develop visual-spatial skills with 3D objects and challenging scenarios that mirror the actual PAT exam.",
+  },
+  {
+    title: "GRE vocabulary",
+    description:
+      'Master challenging words through clever illustrations, word roots, and catchy mnemonics. Each word comes with origins, connections, and a "connotation meter" to help you truly understand meaning.',
+  },
+  {
+    title: "Deep concept connections",
+    description:
+      "Connect new difficult words and concepts to things you already know, so they actually stick in your memory instead of being forgotten after the test.",
+  },
+  {
+    title: "Visual + verbal learning",
+    description: "We pair illustrations with explanations because your brain learns better with both.",
+  },
+  {
+    title: "Smart repetition",
+    description: "See the same concepts again at the right times so you don't forget them.",
+  },
+  {
+    title: "Active engagement",
+    description: "Learn through interactive quizzes and challenges rather than passive reading.",
+  },
+]
+
+const TESTIMONIALS = [
+  {
+    authorName: "Ronald",
+    authorTitle: "Brigham Young University",
+    text: "Highly recommended. The problems went from easy to hard and towards the end It became a game for me to see if I could beat the score and achieve higher. I ended up with a 22 on PAT thanks to the great practice and techniques from Erudition PAT Prep.",
+  },
+  {
+    authorName: "John",
+    authorTitle: "McMaster University",
+    text: "Your PAT videos were the absolute best by far. I was dying on the Keyhole problems and [other]’s videos were not helping. You actually did difficult examples in your videos and it helped me tremendously!",
+  },
+]
+
 export default function EruditionCaseStudy() {
-  const challenges = [
-    { text: "Rote memorization that doesn't stick" },
-    { text: "Boring study materials that put you to sleep" },
-    { text: "No real understanding of how concepts connect" },
-    { text: "One-dimensional learning that doesn't engage your brain fully" }
-  ]
-
-  const solutions = [
-    {
-      title: "DAT perceptual ability",
-      description:
-        "Develop visual-spatial skills with 3D objects and challenging scenarios that mirror the actual PAT exam.",
-    },
-    {
-      title: "GRE vocabulary",
-      description:
-        'Master challenging words through clever illustrations, word roots, and catchy mnemonics. Each word comes with origins, connections, and a "connotation meter" to help you truly understand meaning.',
-    },
-    {
-      title: "Deep concept connections",
-      description:
-        "Connect new difficult words and concepts to things you already know, so they actually stick in your memory instead of being forgotten after the test.",
-    },
-    {
-      title: "Visual + verbal learning",
-      description: "We pair illustrations with explanations because your brain learns better with both.",
-    },
-    {
-      title: "Smart repetition",
-      description: "See the same concepts again at the right times so you don't forget them.",
-    },
-    {
-      title: "Active engagement",
-      description: "Learn through interactive quizzes and challenges rather than passive reading.",
-    },
-  ]
-
-  const testimonials = [
-    {
-      authorName: "Ronald",
-		authorTitle: "Brigham Young University",
-		text: "Highly recommended. The problems went from easy to hard and towards the end It became a game for me to see if I could beat the score and achieve higher. I ended up with a 22 on PAT thanks to the great practice and techniques from Erudition PAT Prep.",
-
-    },
-    {
-      authorName: "John",
-		authorTitle: "McMaster University",
-		text: "Your PAT videos were the absolute best by far. I was dying on the Keyhole problems and [other]’s videos were not helping. You actually did difficult examples in your videos and it helped me tremendously!",
-
-    },
-  ]
-
   return (
     <Box>
       {/* Hero Section */}
-      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
-        <Grid container spacing={6}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Typography
-              variant="h2"
-              component="h1"
-              sx={{
-                fontWeight: "bold",
-                mb: 3,
-                color: "#000",
-              }}
-            >
-              Erudition
-            </Typography>
-          </Grid>
-          <Grid item size={{ xs: 12, md: 6 }}>
-            <Typography
-              variant="body1"
-              sx={{
-                mb: 3,
-                color: "text.secondary",
-                lineHeight: 1.6,
-                color: "#000",
-              }}
-            >
-              Learning shouldn't be complicated. We're creating a space where teachers can easily build engaging courses
-              and students actually enjoy the learning process.
-            </Typography>
-            <Box sx={{ display: "flex", gap: 1, mb: 4 }}>
-              <Chip
-                label="Education"
-                sx={{
-                  backgroundColor: "#EFBED2",
-                  fontWeight: 500,
-                }}
-              />
-              <Chip
-                label="E-learning"
-                sx={{
-                  backgroundColor: "#EFBED2",
-                  fontWeight: 500,
-                }}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Box>
-          <Image
-            src="/cases/erudition/hero-image.png"
-            alt="Erudition application interface"
-            width={1320}
-            height={530}
-            style={{ width: "100%", height: "auto" }}
-          />
-        </Box>
+      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
+        <CaseStudyHero
+          title="Erudition"
+          description={"Learning shouldn't be complicated. We're creating a space where teachers can easily build engaging courses and students actually enjoy the learning process."}
+          tags={["Education", "E-learning"]}
+          image="/cases/erudition/hero-image.png"
+          imageAlt="Erudition application interface"
+        />
       </Container>
 
       {/* Overview Section */}
@@ -144,31 +95,30 @@ export default function EruditionCaseStudy() {
           everything connects.
         </Typography>
 
-        <ChallengesList 
-          challenges={challenges}
-          variant="numbered"
+        <ChallengesList
+          challenges={CHALLENGES}
           title="Challenges"
           introText="Traditional learning was limiting:"
         />
       </CaseStudyOverview>
 
-      <SolutionsList 
-        solutions={solutions}
+      <SolutionsList
+        solutions={SOLUTIONS}
         subtitle="Master new skills the smart way. Personalized learning plans, progress tracking, and study tools that actually help you remember what you learn."
       />
 
-      <Image
-        src="/cases/erudition/showcase.jpg"
-        alt="Erudition interface showcase"
-        width={1440}
-        height={1980}
-        style={{ width: "100%", height: "auto" }}
-      />
+      <Box display={"flex"} justifyContent="center" sx={{ backgroundColor: "#1a1a1a" }}>
+        <Image
+          src="/cases/erudition/showcase.jpg"
+          alt="Erudition interface showcase"
+          width={1440}
+          height={1980}
+          style={{ width: "100%", maxWidth: "1440px", height: "auto" }}
+        />
+      </Box>
 
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          <EruditionTestimonials />
-        </Grid>
+          <CustomerTestimonials testimonials={TESTIMONIALS} />
       </Container>
 
       <Box sx={{ backgroundColor: "#1a1a1a", color: "white", py: 8 }}>
@@ -178,7 +128,7 @@ export default function EruditionCaseStudy() {
           </Typography>
 
           <Grid container spacing={4}>
-            <Grid item size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card
                 sx={{ backgroundColor: "#1a1a1a", color: "white", height: "100%", border: "1px solid #737373" }}
               >
@@ -214,7 +164,7 @@ export default function EruditionCaseStudy() {
                       Play Erudition PAT
                     </Button>
                   </Box>
-                  <Box sx={{ textAlign: "center" }} 
+                  <Box sx={{ textAlign: "center" }}
                     display="flex"
                     justifyContent="end"
                     flexDirection="column"
@@ -231,7 +181,7 @@ export default function EruditionCaseStudy() {
               </Card>
             </Grid>
 
-            <Grid item size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card sx={{ backgroundColor: "#1a1a1a", color: "white", height: "100%", border: "1px solid #737373" }}>
                 <CardContent sx={{ p: 0, paddingBottom: '0 !important', display: "flex", height: "100%" }}>
                   <Box
@@ -265,7 +215,7 @@ export default function EruditionCaseStudy() {
                       Boost your GRE Vocab
                     </Button>
                   </Box>
-                  <Box sx={{ textAlign: "center" }} 
+                  <Box sx={{ textAlign: "center" }}
                     display="flex"
                     justifyContent="end"
                     flexDirection="column"
@@ -287,12 +237,12 @@ export default function EruditionCaseStudy() {
 
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH} sx={{ py: 8 }}>
         <Grid container spacing={6}>
-          <Grid item size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography variant="h3" component="h2" sx={{ fontWeight: "bold", mb: 6 }}>
               Technology stack
             </Typography>
           </Grid>
-          <Grid item size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
               Frontend
             </Typography>
@@ -412,7 +362,7 @@ export default function EruditionCaseStudy() {
         </Typography>
 
         <Grid container spacing={4}>
-          <Grid item size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Card sx={{ border: "1px solid #e0e0e0", overflow: "hidden" }}>
               <Box sx={{ backgroundColor: "#f5f5f5", p: 4, textAlign: "center" }}>
                 <Image
@@ -434,7 +384,7 @@ export default function EruditionCaseStudy() {
             </Card>
           </Grid>
 
-          <Grid item size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Card sx={{ border: "1px solid #e0e0e0", overflow: "hidden" }}>
               <Box sx={{ backgroundColor: "#f5f5f5", p: 4, textAlign: "center" }}>
                 <Image

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Script from "next/script"
 import { Box, Container, Typography, IconButton } from "@mui/material"
 import { Facebook, Instagram, LinkedIn, GitHub } from "@mui/icons-material"
 import XIcon from "@mui/icons-material/X"

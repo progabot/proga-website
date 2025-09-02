@@ -6,7 +6,7 @@ import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 export const metadata = {
   title: "Contact Us | Proga Tech",
-  description: "",
+  description: "Get in touch with Proga Tech. Contact form for project inquiries and collaboration. Let's discuss your development needs and bring ideas to life.",
 }
 
 function LoadingSpinner() {

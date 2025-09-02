@@ -34,7 +34,7 @@ export default function StickyTwoColumnLayout({
       <Container maxWidth={containerMaxWidth}>
         <Grid container spacing={spacing} position={"relative"}>
           <Grid size={{ xs: 12, md: 6 }} {...leftColumnProps}>
-            <Box position={"sticky"} top={stickyTop}>
+            <Box position={"sticky"} top={stickyTop} >
               {stickyContent}
             </Box>
           </Grid>

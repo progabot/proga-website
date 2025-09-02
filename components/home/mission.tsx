@@ -1,27 +1,27 @@
 "use client"
 
 import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material"
-import { Computer, TrendingUp, Favorite, Psychology } from "@mui/icons-material"
+import { Sprout, HeartHandshake, MessageCircleHeart, CodeXml } from "lucide-react"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 const missionItems = [
   {
-    icon: Computer,
+    icon: CodeXml,
     title: "Build meaningful tech",
     description: "Creating user-friendly digital products that solve real problems and make a positive impact",
   },
   {
-    icon: TrendingUp,
+    icon: Sprout,
     title: "Grow talent",
     description: "We invest in people, our most valuable asset",
   },
   {
-    icon: Favorite,
+    icon: HeartHandshake,
     title: "Support Ukraine",
     description: "We contribute to victory with regular donations and purposeful projects",
   },
   {
-    icon: Psychology,
+    icon: MessageCircleHeart,
     title: "Lead with heart and resilience",
     description: "Born in hard times, we carry creativity, care, and strength into everything we do",
   },
@@ -43,11 +43,11 @@ export default function Mission() {
           Our mission
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           {missionItems.map((item, index) => {
             const IconComponent = item.icon
             return (
-              <Grid item size={{xs:12,sm:6,lg:3}} ey={index}>
+              <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
                 <Card
                   sx={{
                     height: "100%",
@@ -59,13 +59,11 @@ export default function Mission() {
                     },
                   }}
                 >
-                  <CardContent sx={{ p: 3 }}>
+                  <CardContent sx={{ p: 3, pb: 0 }}>
                     <Box sx={{ mb: 2 }}>
                       <IconComponent
-                        sx={{
-                          fontSize: 24,
-                          color: "#E498B7",
-                        }}
+                        fontSize="24px"
+                        color="#E498B7"
                       />
                     </Box>
                     <Typography
@@ -75,6 +73,7 @@ export default function Mission() {
                         fontWeight: 600,
                         mb: 2,
                         color: "#000000",
+                        minHeight: "55px",
                       }}
                     >
                       {item.title}

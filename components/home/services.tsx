@@ -4,34 +4,7 @@ import { Box, Typography, Card, CardContent } from "@mui/material"
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import { motion } from "framer-motion"
 import StickyTwoColumnLayout from "@/components/shared/sticky-two-column-layout"
-import { Bot, MonitorSmartphone, WalletCards, Palette } from "lucide-react"
-
-const services = [
-  {
-    icon: <Bot color="#E498B7" size="2rem" />,
-    title: "Full-Cycle AI-Driven Web Development",
-    description: "",
-    isDark: true,
-  },
-  {
-    icon: <MonitorSmartphone color="#E498B7" size="2rem" />,
-    title: "Cross-Platform Web Mobile Development",
-    description: "",
-    isDark: false,
-  },
-  {
-    icon: <WalletCards color="#E498B7" size="2rem" />,
-    title: "Stripe Payment Integration Expertise",
-    description: "",
-    isDark: false,
-  },
-  {
-    icon: <Palette color="#E498B7" size="2rem" />,
-    title: "End-to-End Product Design & UX/UI",
-    description: "",
-    isDark: false,
-  },
-]
+import { SERVICES } from "@/utils/services";
 
 export default function Services() {
   const stickyContent = (
@@ -59,7 +32,7 @@ export default function Services() {
 
   const mainContent = (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-      {services.map((service, index) => (
+      {SERVICES.map((service, index) => (
         <motion.div
           key={service.title}
           initial={{ opacity: 0, x: 20 }}
@@ -74,6 +47,10 @@ export default function Services() {
               p: 3,
               pb: 0,
               border: service.isDark ? "none" : "1px solid #e0e0e0",
+              boxShadow: "none",
+                    "&:hover": {
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                    },
             }}
           >
             <CardContent sx={{ p: 0 }}>
@@ -87,14 +64,15 @@ export default function Services() {
                 mb: 5, 
                 backgroundColor: service.isDark ? "#2C2C2C" : "#F7F7F7" 
               }}>
-                {service.icon}
+                {<service.icon color="#E498B7" size="2rem" />}
               </Box>
               <Typography
                 variant="h5"
                 sx={{
                   fontSize: "1.25rem",
-                  fontWeight: 500,
+                  fontWeight: "regular",
                   color: service.isDark ? "#fff" : "#000",
+                  boxShadow: "none"
                 }}
               >
                 {service.title}

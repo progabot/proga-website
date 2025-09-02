@@ -42,7 +42,7 @@ export default function InstagramSection() {
 
             <Image src={"/instagram.jpg"} alt={`PGT Instagram`} width={418} height={572} style={{ width: "100%", height: "auto" }} />
           </Grid>
-          <Grid item size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Image
               src={"/team-2.jpg"}
               alt={`PGT Instagram`}

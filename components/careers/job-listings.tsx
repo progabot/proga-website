@@ -40,7 +40,7 @@ export default function JobListings() {
 
         <Grid container spacing={4}>
           {jobs.map((job, index) => (
-            <Grid item size={{xs:12,md:6}} key={index}>
+            <Grid size={{xs:12,md:6}} key={index}>
               <Card
                 sx={{
                   backgroundColor: "#2a2a2a",

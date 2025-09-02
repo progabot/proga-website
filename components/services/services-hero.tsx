@@ -3,21 +3,7 @@
 import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material"
 import { Computer, Smartphone, CreditCard } from "@mui/icons-material"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-
-const services = [
-  {
-    icon: <Computer sx={{ color: "#E498B7", fontSize: "2rem" }} />,
-    title: "All in one WEB + Apps development",
-  },
-  {
-    icon: <Smartphone sx={{ color: "#E498B7", fontSize: "2rem" }} />,
-    title: "All in one WEB + Apps development",
-  },
-  {
-    icon: <CreditCard sx={{ color: "#E498B7", fontSize: "2rem" }} />,
-    title: "Stripe",
-  },
-]
+import { SERVICES } from "@/utils/services"
 
 export default function ServicesHero() {
   return (
@@ -49,8 +35,8 @@ export default function ServicesHero() {
         </Box>
 
         <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid item size={{xs:12,md:4}} key={index}>
+          {SERVICES.map((service, index) => (
+            <Grid size={{ xs: 12, md: 3 }} key={index}>
               <Card
                 sx={{
                   backgroundColor: "#fff",
@@ -67,12 +53,23 @@ export default function ServicesHero() {
                 }}
               >
                 <CardContent sx={{ p: 0 }}>
-                  <Box sx={{ mb: 3 }}>{service.icon}</Box>
+                  <Box sx={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 56,
+                    height: 56,
+                    borderRadius: "50%",
+                    mb: 5,
+                    backgroundColor: "#F7F7F7"
+                  }}>
+                    {<service.icon color="#E498B7" size="2rem" />}
+                  </Box>
                   <Typography
                     variant="h5"
                     sx={{
                       fontSize: "1.25rem",
-                      fontWeight: 500,
+                      fontWeight: "normal",
                       color: "#000",
                       lineHeight: 1.4,
                     }}

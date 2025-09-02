@@ -42,7 +42,7 @@ export default function TechnologyStack() {
     <Box component="section" sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <Grid container spacing={8}>
-          <Grid item size={{xs:12,lg:5}}>
+          <Grid size={{xs:12,lg:5}}>
             <Typography
               variant="h2"
               sx={{
@@ -91,7 +91,7 @@ export default function TechnologyStack() {
             </Typography>
           </Grid>
 
-          <Grid item size={{xs:12,lg:7}}>
+          <Grid size={{xs:12,lg:7}}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               {techCategories.map((category, index) => (
                 <Card

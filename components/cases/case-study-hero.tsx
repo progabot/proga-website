@@ -39,9 +39,8 @@ export default function CaseStudyHero({
                         variant="body1"
                         sx={{
                             mb: 3,
-                            color: "text.secondary",
                             lineHeight: 1.6,
-                            color: "#000",
+                            color: "#1A1A1A",
                         }}
                     >
                         {description}

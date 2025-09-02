@@ -6,7 +6,7 @@ import ProjectCTA from "@/components/shared/project-cta"
 
 export const metadata = {
   title: "Services | Proga Tech",
-  description: "",
+  description: "Full-cycle development: Research, Product Design, UX/UI Design, Cross-Platform Development. Complete technology stack from concept to deployment.",
 }
 
 export default function ServicesPage() {

@@ -9,7 +9,7 @@ import InspiringMomentsSection from "@/components/about/inspiring-moments-sectio
 
 export const metadata = {
   title: "About Us | Proga Tech",
-  description: "",
+  description: "Meet Proga Tech team. Experienced developers and designers creating digital solutions. Our story, values, and expertise.",
 }
 
 export default function AboutPage() {
