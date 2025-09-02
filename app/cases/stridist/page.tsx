@@ -11,7 +11,7 @@ import CaseStudyHero from "@/components/cases/case-study-hero"
 
 export const metadata = {
   title: "Stridist | Case Study | Proga Tech",
-  description: "",
+  description: "Fitness coaching platform case study. Intuitive workout builder, client management, progress tracking, and automated systems for fitness trainers.",
 }
 
 export default function StridistCaseStudy() {

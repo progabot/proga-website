@@ -9,15 +9,41 @@ import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
 
 export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
-  const words = ["creativity", "expertise", "code"]
+  const [isTyping, setIsTyping] = useState(true)
+  const [displayedText, setDisplayedText] = useState("")
+  const words = ["creativity", "expertise", "code"];
+
+  const TYPING_SPEED_IN_MILLISECONDS_PER_CHARACTER = 100;
+  const ERASING_SPEED_IN_MILLISECONDS_PER_CHARACTER = 25;
+  const WORD_PAUSE_DURATION_IN_MILLISECONDS = 2000;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((prev) => (prev + 1) % words.length)
-    }, 3500)
+    const currentWord = words[currentWordIndex]
+    let timeout: NodeJS.Timeout
 
-    return () => clearInterval(interval)
-  }, [])
+    if (isTyping) {
+      if (displayedText.length < currentWord.length) {
+        timeout = setTimeout(() => {
+          setDisplayedText(currentWord.slice(0, displayedText.length + 1))
+        }, TYPING_SPEED_IN_MILLISECONDS_PER_CHARACTER)
+      } else {
+        timeout = setTimeout(() => {
+          setIsTyping(false)
+        }, WORD_PAUSE_DURATION_IN_MILLISECONDS)
+      }
+    } else {
+      if (displayedText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayedText(displayedText.slice(0, -1))
+        }, ERASING_SPEED_IN_MILLISECONDS_PER_CHARACTER)
+      } else {
+        setCurrentWordIndex((prev) => (prev + 1) % words.length)
+        setIsTyping(true)
+      }
+    }
+
+    return () => clearTimeout(timeout)
+  }, [currentWordIndex, isTyping, displayedText, words])
 
   return (
     <Box component="section" sx={{ backgroundColor: "#ffffff", overflow: "hidden" }}>
@@ -37,28 +63,34 @@ export default function Hero() {
               Transforming businesses
               <br />
               with{" "}
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={currentWordIndex}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.5 }}
-
-                  style={{
-                    backgroundColor: "#f8bbd9",
-                    color: "#000",
-                    padding: "8px 16px",
-                    borderRadius: "16px",
-                    display: "inline-block",
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "center center",
-                    lineHeight: 1.1
-                  }}
+              <span
+                style={{
+                  backgroundColor: "#f8bbd9",
+                  color: "#000",
+                  padding: "8px 16px",
+                  borderRadius: "16px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
+                  minWidth: "50px",
+                  textAlign: "left"
+                }}
+              >
+                {displayedText.split('').map((letter, index) => (
+                  <motion.span
+                    key={`${currentWordIndex}-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.1, delay: 0.05 }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+                <span
+                  style={{ fontSize: "1px", visibility: "hidden" }}
                 >
-                  {words[currentWordIndex]}
-                </motion.span>
-              </AnimatePresence>
+                  |
+                </span>
+              </span>
             </Typography>
             <Typography
               variant="body1"

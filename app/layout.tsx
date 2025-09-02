@@ -4,7 +4,6 @@ import { MuiThemeProvider } from "@/components/mui-theme-provider"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import ScrollToTop from "@/components/layout/scroll-to-top"
-import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 

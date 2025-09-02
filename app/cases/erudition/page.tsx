@@ -10,7 +10,7 @@ import CaseStudyHero from "@/components/cases/case-study-hero"
 
 export const metadata = {
   title: "Erudition | Case Study | Proga Tech",
-  description: "",
+  description: "Learning platform case study. Educational solution with course management, student tracking, and interactive learning tools for modern education.",
 }
 
 const CHALLENGES = [

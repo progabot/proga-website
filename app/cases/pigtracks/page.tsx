@@ -1,9 +1,6 @@
-import { Box, Container, Typography, Chip, Grid, Button, Card, CardContent } from "@mui/material"
+import { Box, Container, Typography } from "@mui/material"
 import Image from "next/image"
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
-import Divider from "@mui/material/Divider"
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container"
-import CustomerTestimonials from "@/components/cases/testimonials"
 import CaseStudyHero from "@/components/cases/case-study-hero"
 import CaseStudyOverview from "@/components/cases/case-study-overview"
 import ChallengesList from "@/components/cases/challenges-list"
@@ -11,7 +8,7 @@ import SolutionsList from "@/components/cases/solutions-list"
 
 export const metadata = {
   title: "PigTracks | Case Study | Proga Tech",
-  description: "",
+  description: "Pipeline integrity management system case study. Seamless integration, intelligent data visualization, and automated workflows for field execution.",
 }
 
 export default function PigtracksCaseStudy() {
@@ -45,21 +42,6 @@ export default function PigtracksCaseStudy() {
     },
     {
       description: "Flexible execution tools that support enterprise-level deployment",
-    },
-  ]
-
-  const testimonials = [
-    {
-      authorName: "Ronald",
-      authorTitle: "Brigham Young University",
-      text: "Highly recommended. The problems went from easy to hard and towards the end It became a game for me to see if I could beat the score and achieve higher. I ended up with a 22 on PAT thanks to the great practice and techniques from Erudition PAT Prep.",
-
-    },
-    {
-      authorName: "John",
-      authorTitle: "McMaster University",
-      text: "Your PAT videos were the absolute best by far. I was dying on the Keyhole problems and [other]’s videos were not helping. You actually did difficult examples in your videos and it helped me tremendously!",
-
     },
   ]
 

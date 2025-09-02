@@ -15,7 +15,7 @@ function LoadingSpinner() {
 
 export const metadata = {
   title: "Careers | Proga Tech",
-  description: "",
+  description: "Join Proga Tech! Career opportunities in web development and design. People-first approach, flexible work environment.",
 }
 
 export default function CareersPage() {
