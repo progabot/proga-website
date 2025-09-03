@@ -5,6 +5,7 @@ import CaseStudyOverview from "@/components/cases/case-study-overview";
 import ChallengesList from "@/components/cases/challenges-list";
 import SolutionsList from "@/components/cases/solutions-list";
 import ProjectShowCase from "@/components/cases/project-showcase";
+import { PIGTRACKS_CASE_STUDY } from "@/utils/cases";
 
 export const metadata = {
   title: "PigTracks | Case Study | Proga Tech",
@@ -49,11 +50,10 @@ export default function PigtracksCaseStudy() {
     <Box>
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <CaseStudyHero
-          title="PigTracks"
-          description="Real-time pipeline monitoring made simple. Track your equipment, get instant alerts when something's wrong, and keep everything running smoothly with live maps and smart automation."
-          tags={["Cloud Platform", "Pipeline Integrity", "Data Management"]}
-          image="/cases/pigtracks/hero-image.png"
-          imageAlt="PigTracks application interface"
+          title={PIGTRACKS_CASE_STUDY.title}
+          description={PIGTRACKS_CASE_STUDY.description}
+          tags={PIGTRACKS_CASE_STUDY.tags}
+          image={PIGTRACKS_CASE_STUDY.coverImage}
         />
       </Container>
 

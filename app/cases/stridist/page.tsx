@@ -4,6 +4,7 @@ import CaseStudyOverview from "@/components/cases/case-study-overview";
 import SolutionsList from "@/components/cases/solutions-list";
 import CaseStudyHero from "@/components/cases/case-study-hero";
 import ProjectShowCase from "@/components/cases/project-showcase";
+import { STRIDIST_CASE_STUDY } from "@/utils/cases";
 
 export const metadata = {
   title: "Stridist | Case Study | Proga Tech",
@@ -57,11 +58,10 @@ export default function StridistCaseStudy() {
     <Box>
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <CaseStudyHero
-          title="Stridist"
-          description="Built for fitness trainers who want to focus on what they love - training people. We handle the scheduling, client management, and business stuff so you can concentrate on changing lives."
-          tags={["Healthcare", "Fitness", "Coaching"]}
-          image="/cases/stridist/hero-image.png"
-          imageAlt="Stridist application interface"
+          title={STRIDIST_CASE_STUDY.title}
+          description={STRIDIST_CASE_STUDY.description}
+          tags={STRIDIST_CASE_STUDY.tags}
+          image={STRIDIST_CASE_STUDY.coverImage}
         />
       </Container>
 

@@ -16,6 +16,7 @@ import ChallengesList from "@/components/cases/challenges-list";
 import SolutionsList from "@/components/cases/solutions-list";
 import CaseStudyHero from "@/components/cases/case-study-hero";
 import ProjectShowCase from "@/components/cases/project-showcase";
+import { ERUDITION_CASE_STUDY } from "@/utils/cases";
 
 export const metadata = {
   title: "Erudition | Case Study | Proga Tech",
@@ -81,13 +82,10 @@ export default function EruditionCaseStudy() {
     <Box>
       <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
         <CaseStudyHero
-          title="Erudition"
-          description={
-            "Learning shouldn't be complicated. We're creating a space where teachers can easily build engaging courses and students actually enjoy the learning process."
-          }
-          tags={["Education", "E-learning"]}
-          image="/cases/erudition/hero-image.png"
-          imageAlt="Erudition application interface"
+          title={ERUDITION_CASE_STUDY.title}
+          description={ERUDITION_CASE_STUDY.description}
+          tags={ERUDITION_CASE_STUDY.tags}
+          image={ERUDITION_CASE_STUDY.coverImage}
         />
       </Container>
 

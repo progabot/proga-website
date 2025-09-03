@@ -17,6 +17,8 @@ import {
 } from "@mui/material";
 import { East, NorthEast } from "@mui/icons-material";
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import { FEATURED_CASE_STUDIES } from "@/utils/cases";
+import CaseStudyCard from "../cases/case-study-card";
 
 const caseStudies = [
   {
@@ -105,119 +107,18 @@ export default function TrustedBy() {
             gap: 3,
           }}
         >
-          {caseStudies.map((study) => (
-            <Box key={study.id}>
-              <Link
-                href={study.link}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <Card
-                  sx={{
-                    boxShadow: "none",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                      "& .case-study-image": {
-                        transform: "scale(1.03)",
-                      },
-                      "& .case-study-link .MuiSvgIcon-root": {
-                        transform: "translate(2px, 0)",
-                      },
-                      "& .case-study-link .case-study-text": {
-                        textDecoration: "underline",
-                      },
-                    },
-                  }}
-                >
-                  <Box sx={{ pb: 2, flex: 1 }}>
-                    <Box
-                      sx={{
-                        position: "relative",
-                        width: "100%",
-                        borderRadius: 2,
-                        overflow: "hidden",
-                        backgroundColor: "#fff",
-                      }}
-                    >
-                      <Image
-                        src={study.image}
-                        alt={`${study.name} interface`}
-                        width={500}
-                        height={500}
-                        className="case-study-image"
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          transition: "transform 0.3s ease",
-                        }}
-                      />
-                    </Box>
-                  </Box>
-
-                  <CardContent sx={{ px: 0, py: 3, pt: 0 }}>
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        fontSize: "1.25rem",
-                        fontWeight: 600,
-                        mb: 2,
-                        color: "#000",
-                      }}
-                    >
-                      {study.name}
-                    </Typography>
-
-                    <Stack
-                      direction="row"
-                      spacing={0.25}
-                      sx={{ flexWrap: "wrap", gap: 1, mb: 3 }}
-                    >
-                      {study.tags.map((tag) => (
-                        <Chip
-                          key={tag}
-                          label={tag}
-                          size="small"
-                          sx={{
-                            backgroundColor: "#EFBED2",
-                            fontSize: "0.75rem",
-                            fontWeight: 500,
-                            border: "none",
-                          }}
-                        />
-                      ))}
-                    </Stack>
-
-                    <Box
-                      className="case-study-link"
-                      sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                    >
-                      <Typography
-                        variant="body2"
-                        className="case-study-text"
-                        sx={{
-                          color: "#000",
-                          fontWeight: 500,
-                          transition: "text-decoration 0.2s ease",
-                        }}
-                      >
-                        See full case study
-                      </Typography>
-                      <East
-                        sx={{
-                          fontSize: 16,
-                          color: "#000",
-                          transition: "transform 0.2s ease",
-                        }}
-                      />
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Link>
-            </Box>
+          {FEATURED_CASE_STUDIES.map((caseStudy) => (
+            <CaseStudyCard
+              key={caseStudy.title}
+              logo={caseStudy.logo}
+              title={caseStudy.title}
+              description={caseStudy.description}
+              tags={caseStudy.tags}
+              mockupImage={caseStudy.coverImageShort}
+              mockupAlt={caseStudy.coverImageShort}
+              href={caseStudy.href}
+              small
+            />
           ))}
 
           <LearnMoreButton sx={{ display: { xs: "block", md: "none" } }} />

@@ -8,7 +8,6 @@ interface CaseStudyHeroProps {
   description: string;
   tags: string[];
   image: string;
-  imageAlt: string;
 }
 
 export default function CaseStudyHero({
@@ -16,7 +15,6 @@ export default function CaseStudyHero({
   description,
   tags,
   image,
-  imageAlt,
 }: CaseStudyHeroProps) {
   return (
     <Box sx={{ py: 7 }}>
@@ -63,7 +61,7 @@ export default function CaseStudyHero({
       <Box>
         <Image
           src={image}
-          alt={imageAlt}
+          alt={`${title} cover image`}
           width={1320}
           height={530}
           style={{ width: "100%", height: "auto" }}

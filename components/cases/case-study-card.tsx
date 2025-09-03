@@ -5,14 +5,14 @@ import Link from "next/link";
 import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
 
 interface CaseStudyCardProps {
-  logo: string;
+  logo?: string;
   title: string;
   description: string;
   tags: string[];
   mockupImage: string;
   mockupAlt: string;
   href: string;
-  reverse?: boolean;
+  small?: boolean;
 }
 
 export default function CaseStudyCard({
@@ -23,7 +23,7 @@ export default function CaseStudyCard({
   mockupImage,
   mockupAlt,
   href,
-  reverse = false,
+  small = false,
 }: CaseStudyCardProps) {
   return (
     <Link
@@ -33,15 +33,12 @@ export default function CaseStudyCard({
     >
       <Box
         sx={{
-          borderRadius: 3,
-          overflow: "hidden",
           minHeight: 500,
           cursor: "pointer",
           transition: "all 0.3s ease",
           "&:hover": {
-            transform: "translateY(-2px)",
             "& .case-study-image": {
-              transform: "scale(1.02)",
+              transform: "scale(1.04)",
             },
             "& .case-study-button .MuiSvgIcon-root": {
               transform: "translate(2px, 0)",
@@ -56,10 +53,32 @@ export default function CaseStudyCard({
           sx={{
             position: "relative",
             width: "100%",
+            borderRadius: "12px",
             overflow: "hidden",
-            borderRadius: 2,
+            display: "flex",
+
+            "& img.case-study-logo": {
+              display: small ? "block" : { xs: "none", md: "block" },
+            },
           }}
         >
+          {logo && (
+            <Image
+              src={logo}
+              className="case-study-logo"
+              alt={`${title} logo`}
+              width={100}
+              height={small ? 24 : 36}
+              style={{
+                borderRadius: "12px",
+                width: "auto",
+                position: "absolute",
+                top: 20,
+                left: 20,
+                zIndex: 1,
+              }}
+            />
+          )}
           <Image
             src={mockupImage}
             alt={mockupAlt}
@@ -78,9 +97,8 @@ export default function CaseStudyCard({
             display: "flex",
             flexDirection: {
               xs: "column",
-              lg: reverse ? "row-reverse" : "row",
+              lg: "row",
             },
-            alignItems: "center",
             gap: { xs: 4, lg: 8 },
             py: 2,
           }}
@@ -96,8 +114,11 @@ export default function CaseStudyCard({
             <Typography
               variant="h2"
               sx={{
-                fontSize: { xs: "1.75rem", md: "2.25rem" },
-                fontWeight: 700,
+                fontSize: {
+                  xs: small ? "1.25rem" : "1.75rem",
+                  md: small ? "1.25rem" : "2.25rem",
+                },
+                fontWeight: small ? 600 : 700,
                 color: "#000",
                 mb: 2,
               }}
@@ -105,32 +126,35 @@ export default function CaseStudyCard({
               {title}
             </Typography>
 
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.1rem",
-                lineHeight: 1.6,
-                color: "#666",
-                mb: 3,
-                maxWidth: "90%",
-              }}
-            >
-              {description}
-            </Typography>
+            {!small && (
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: "1.1rem",
+                  lineHeight: 1.6,
+                  color: "#666",
+                  mb: 3,
+                  maxWidth: "90%",
+                }}
+              >
+                {description}
+              </Typography>
+            )}
 
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 3 }}>
               {tags.map((tag) => (
                 <Chip
                   key={tag}
                   label={tag}
+                  size={small ? "small" : "medium"}
                   sx={{
                     backgroundColor: "#EFBED2",
                     color: "#000",
                     fontWeight: 500,
-                    fontSize: "0.875rem",
-                    height: 32,
+                    fontSize: small ? "0.75rem" : "0.875rem",
+                    height: small ? 24 : 32,
                     "& .MuiChip-label": {
-                      px: 2,
+                      px: small ? 1 : 2,
                     },
                   }}
                 />
