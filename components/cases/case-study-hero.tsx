@@ -64,7 +64,7 @@ export default function CaseStudyHero({
           alt={`${title} cover image`}
           width={1320}
           height={530}
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "100%", height: "auto", borderRadius: "24px" }}
         />
       </Box>
     </Box>

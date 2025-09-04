@@ -70,7 +70,6 @@ export default function CaseStudyCard({
               width={100}
               height={small ? 24 : 36}
               style={{
-                borderRadius: "12px",
                 width: "auto",
                 position: "absolute",
                 top: 20,
