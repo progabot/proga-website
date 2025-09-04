@@ -11,7 +11,7 @@ export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   const [displayedText, setDisplayedText] = useState("");
-  const words = ["creativity", "expertise", "code"];
+  const words = ["creativity", "expertise", "ownership"];
 
   const TYPING_SPEED_IN_MILLISECONDS_PER_CHARACTER = 100;
   const ERASING_SPEED_IN_MILLISECONDS_PER_CHARACTER = 25;
