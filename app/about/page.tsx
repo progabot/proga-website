@@ -31,7 +31,7 @@ export default function AboutPage() {
       <InstagramSection />
       <ValuesSection />
       <TeamMembers />
-      <InspiringMomentsSection />
+      {/* <InspiringMomentsSection /> */}
     </Box>
   );
 }

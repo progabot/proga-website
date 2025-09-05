@@ -14,7 +14,7 @@ export const STRIDIST_CASE_STUDY: CaseStudy = {
   description:
     "Built for fitness trainers who want to focus on what they love - training people. We handle the scheduling, client management, and business stuff so you can concentrate on changing lives.",
   tags: ["Healthcare", "Fitness", "Coaching"],
-  logo: "/cases/stridist/logo.png",
+  logo: "/cases/stridist/logo-v2.png",
   coverImage: "/cases/stridist/cover-image.jpg",
   coverImageShort: "/cases/stridist/cover-image-short.jpg",
 };
@@ -25,7 +25,7 @@ export const PIGTRACKS_CASE_STUDY: CaseStudy = {
   description:
     "Real-time pipeline monitoring made simple. Track your equipment, get instant alerts when something's wrong, and keep everything running smoothly with live maps and smart automation.",
   tags: ["Cloud Platform", "Pipeline Integrity", "Data Management"],
-  logo: "/cases/pigtracks/logo.png",
+  logo: "/cases/pigtracks/logo-v2.png",
   coverImage: "/cases/pigtracks/cover-image.jpg",
   coverImageShort: "/cases/pigtracks/cover-image-short.jpg",
 };
@@ -36,7 +36,7 @@ export const ERUDITION_CASE_STUDY: CaseStudy = {
   description:
     "Learning shouldn't be complicated. We're creating a space where teachers can easily build engaging courses and students actually enjoy the learning process.",
   tags: ["Education", "E-learning"],
-  logo: "/cases/erudition/logo.png",
+  logo: "/cases/erudition/logo-v2.png",
   coverImage: "/cases/erudition/cover-image.jpg",
   coverImageShort: "/cases/erudition/cover-image-short.jpg",
 };

@@ -29,17 +29,17 @@ export default function TeamMembers() {
               display={"flex"}
               alignItems={"end"}
               sx={{
-                height: "315px",
+                height: "355px",
                 overflow: "hidden",
                 position: "relative",
                 "&:hover": {
-                  "& .background-image": {
+                  "& .member-image": {
                     transform: "scale(1.1)",
                   },
                 },
               }}
             >
-              <Box
+              {/* <Box
                 className="background-image"
                 sx={{
                   position: "absolute",
@@ -47,33 +47,68 @@ export default function TeamMembers() {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundImage: `url('${member.image}')`,
+                  backgroundImage: `url('/team-members/bg.png')`,
                   backgroundPosition: "center center",
                   backgroundSize: "cover",
                   transition: "transform 0.3s ease-in-out",
                   zIndex: 1,
+                }}
+              /> */}
+              <Image
+                src={"/team-members/bg.png"}
+                alt={member.name}
+                width={427}
+                height={315}
+                // layout="fill"
+                // objectFit="cover"
+                style={{ zIndex: 1 }}
+              />
+              <Image
+                src={member.image}
+                alt={member.name}
+                width={306}
+                height={335}
+                // layout="fill"
+                // objectFit="cover"
+                className="member-image"
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  zIndex: 3,
+                  width: "auto",
+                  transition: "transform 0.3s ease-in-out",
                 }}
               />
               <Box
                 sx={{
                   py: 2,
                   pl: 2,
-                  width: "100%",
-                  color: "white",
-                  backgroundColor: "rgba(26, 26, 26, 0.5)",
+                  // width: "100%",
+                  color: "black",
+                  // backgroundColor: "rgba(26, 26, 26, 0.5)",
                   borderBottomRightRadius: 16,
                   borderBottomLeftRadius: 16,
-                  position: "relative",
+                  position: "absolute",
+                  top: "51px",
+                  left: "20px",
                   zIndex: 2,
                 }}
               >
                 <Typography
                   variant="h6"
-                  sx={{ fontWeight: "bold", color: "white" }}
+                  sx={{
+                    fontWeight: "bold",
+                    color: "black",
+                    fontSize: "1.25rem",
+                  }}
                 >
                   {member.name}
                 </Typography>
-                <Typography variant="body2" sx={{ color: "white" }}>
+                <Typography
+                  variant="body2"
+                  sx={{ color: "black", maxWidth: "140px" }}
+                >
                   {member.title}
                 </Typography>
               </Box>
