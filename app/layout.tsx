@@ -8,9 +8,9 @@ import ScrollToTop from "@/components/layout/scroll-to-top";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Proga Tech | Progressive software empowering your ideas",
+  title: "Proga Tech | Empowering your ideas",
   description:
-    "Proga Tech transforms businesses with creative web development solutions. Client testimonials, portfolio projects, and full-cycle development services.",
+    "Expert web development services & custom digital solutions by Proga Tech. View our portfolio & transform your business today. Get free consultation!",
 };
 
 export default function RootLayout({
