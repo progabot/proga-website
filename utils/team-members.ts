@@ -82,7 +82,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Sofiia",
-    title: "Software Engineer",
+    title: "UI/UX Designer",
     image: "/team-members/transparent-backgrounds/sofiia.png",
   },
 ];
