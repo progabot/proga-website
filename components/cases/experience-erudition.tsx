@@ -1,0 +1,190 @@
+"use client";
+
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Button,
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import { PAGE_CONTAINER_MAX_WIDTH } from "@/utils/page-container";
+import { SectionTitle } from "@/components/shared/section-title";
+
+export default function ExperienceErudition() {
+  const theme = useTheme();
+
+  return (
+    <Box
+      sx={{
+        backgroundColor: "#1a1a1a",
+        color: theme.palette.common.white,
+        py: 8,
+      }}
+    >
+      <Container maxWidth={PAGE_CONTAINER_MAX_WIDTH}>
+        <SectionTitle
+          id="experience-erudition"
+          variant="h3"
+          component="h2"
+          sx={{ fontWeight: "bold", mb: 6 }}
+        >
+          Experience Erudition
+        </SectionTitle>
+
+        <Grid container spacing={4}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card
+              sx={{
+                backgroundColor: "#1a1a1a",
+                color: theme.palette.common.white,
+                height: "100%",
+                border: `1px solid ${theme.palette.grey[500]}`,
+              }}
+            >
+              <CardContent
+                sx={{ p: 0, paddingBottom: "0 !important", display: "flex" }}
+              >
+                <Box
+                  p={2}
+                  pr={0}
+                  display="flex"
+                  justifyContent="space-between"
+                  flexDirection="column"
+                  alignItems="baseline"
+                >
+                  <Box>
+                    <Image
+                      src="/cases/erudition/dat-logo.png"
+                      alt="Erudition Dat"
+                      width={180}
+                      height={36}
+                    />
+                    <Typography
+                      variant="body1"
+                      sx={{ mb: 4, mt: 2, color: "#cccccc" }}
+                    >
+                      Get a fun training task in your inbox every week (no
+                      course registration required).
+                    </Typography>
+                  </Box>
+                  <Button
+                    variant="contained"
+                    component="a"
+                    href="https://eruditionprep.com/dat/pat/question-of-the-week"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      backgroundColor: "#85CF91",
+                      color: "black",
+                      mb: 3,
+                      "&:hover": { backgroundColor: "#45a049" },
+                    }}
+                    endIcon={<ArrowUpRight />}
+                  >
+                    Play Erudition PAT
+                  </Button>
+                </Box>
+                <Box
+                  sx={{ textAlign: "center" }}
+                  display="flex"
+                  justifyContent="end"
+                  flexDirection="column"
+                  alignItems="baseline"
+                >
+                  <Image
+                    src="/cases/erudition/dat-preview.png"
+                    alt="Erudition DAT mobile app"
+                    width={472}
+                    height={628}
+                    style={{ maxWidth: "100%", height: "auto" }}
+                  />
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card
+              sx={{
+                backgroundColor: "#1a1a1a",
+                color: theme.palette.common.white,
+                height: "100%",
+                border: `1px solid ${theme.palette.grey[500]}`,
+              }}
+            >
+              <CardContent
+                sx={{
+                  p: 0,
+                  paddingBottom: "0 !important",
+                  display: "flex",
+                  height: "100%",
+                }}
+              >
+                <Box
+                  p={2}
+                  pr={0}
+                  display="flex"
+                  justifyContent="space-between"
+                  flexDirection="column"
+                  alignItems="baseline"
+                >
+                  <Box>
+                    <Image
+                      src="/cases/erudition/vocab-logo.png"
+                      alt="Erudition Vocab"
+                      width={180}
+                      height={36}
+                    />
+                    <Typography
+                      variant="body1"
+                      sx={{ mb: 4, mt: 2, color: "#cccccc" }}
+                    >
+                      Learn advanced vocabulary with clever illustrations, word
+                      origins, and memorable associations.
+                    </Typography>
+                  </Box>
+                  <Button
+                    variant="contained"
+                    component="a"
+                    href="https://grewordoftheday.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      backgroundColor: "#85CF91",
+                      color: "black",
+                      mb: 3,
+                      "&:hover": { backgroundColor: "#45a049" },
+                    }}
+                    endIcon={<ArrowUpRight />}
+                  >
+                    Boost your GRE Vocab
+                  </Button>
+                </Box>
+                <Box
+                  sx={{ textAlign: "center" }}
+                  display="flex"
+                  justifyContent="end"
+                  flexDirection="column"
+                  alignItems="baseline"
+                >
+                  <Image
+                    src="/cases/erudition/vocab-preview.png"
+                    alt="Erudition DAT mobile app"
+                    width={472}
+                    height={628}
+                    style={{ maxWidth: "100%", height: "auto" }}
+                  />
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  );
+}
